@@ -10,7 +10,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/SORM$test.coverage" NAME="test Coverage Results" MODIFIED="1540273291357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/SORM$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1540304083775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dev" />
+    <SUITE FILE_PATH="coverage/SORM$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1540310798405" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dev" />
     <SUITE FILE_PATH="coverage/SORM$sorm__1_.coverage" NAME="sorm (1) Coverage Results" MODIFIED="1540272459392" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/versions" />
     <SUITE FILE_PATH="coverage/SORM$sorm.coverage" NAME="sorm Coverage Results" MODIFIED="1540272448856" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -34,8 +34,9 @@
       <usages-collector id="statistics.vcs.git.usages" />
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="Python Console" value="65" />
           <entry key="md" value="55" />
-          <entry key="py" value="4910" />
+          <entry key="py" value="5633" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -47,7 +48,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="55" />
-          <entry key="Python" value="4910" />
+          <entry key="Python" value="5698" />
         </counts>
       </usages-collector>
     </session>
@@ -59,16 +60,17 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/dev/sorm.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="284">
-                  <caret line="48" column="25" lean-forward="true" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
+                <state relative-caret-position="298">
+                  <caret line="29" column="23" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
                   <folding>
-                    <marker date="1540304369037" expanded="true" signature="29:34" ph="..." />
-                    <marker date="1540304369037" expanded="true" signature="189:293" ph="..." />
-                    <marker date="1540304369037" expanded="true" signature="424:443" ph="..." />
-                    <marker date="1540304369037" expanded="true" signature="510:513" ph="..." />
-                    <marker date="1540304369037" expanded="true" signature="541:547" ph="..." />
-                    <marker date="1540304369037" expanded="true" signature="895:1761" ph="..." />
-                    <marker date="1540304369037" expanded="true" signature="1575:1639" ph="..." />
+                    <element signature="e#0#29#0" expanded="true" />
+                    <marker date="1540311484381" expanded="true" signature="94:106" ph="..." />
+                    <marker date="1540311484381" expanded="true" signature="441:591" ph="..." />
+                    <marker date="1540311484381" expanded="true" signature="951:970" ph="..." />
+                    <marker date="1540311484381" expanded="true" signature="1076:1079" ph="..." />
+                    <marker date="1540311484381" expanded="true" signature="1092:1097" ph="..." />
+                    <marker date="1540311484381" expanded="true" signature="1338:2204" ph="..." />
+                    <marker date="1540311484381" expanded="true" signature="2018:2082" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -97,10 +99,10 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/dev/test.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="221">
-                  <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+                <state relative-caret-position="361">
+                  <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
                   <folding>
-                    <marker date="1540301259089" expanded="true" signature="522:523" ph="..." />
+                    <marker date="1540310098721" expanded="true" signature="511:716" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -320,7 +322,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32891566" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" weight="0.32891566" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -328,9 +330,9 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007153" side_tool="true" weight="0.32891566" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32891566" />
-      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32891566" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="12" sideWeight="0.49928468" visible="true" weight="0.32891566" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -398,26 +400,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+        <state relative-caret-position="361">
+          <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
           <folding>
-            <marker date="1540301259089" expanded="true" signature="522:523" ph="..." />
+            <marker date="1540310098721" expanded="true" signature="511:716" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/sorm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="48" column="25" lean-forward="true" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
+        <state relative-caret-position="298">
+          <caret line="29" column="23" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
           <folding>
-            <marker date="1540304369037" expanded="true" signature="29:34" ph="..." />
-            <marker date="1540304369037" expanded="true" signature="189:293" ph="..." />
-            <marker date="1540304369037" expanded="true" signature="424:443" ph="..." />
-            <marker date="1540304369037" expanded="true" signature="510:513" ph="..." />
-            <marker date="1540304369037" expanded="true" signature="541:547" ph="..." />
-            <marker date="1540304369037" expanded="true" signature="895:1761" ph="..." />
-            <marker date="1540304369037" expanded="true" signature="1575:1639" ph="..." />
+            <element signature="e#0#29#0" expanded="true" />
+            <marker date="1540311484381" expanded="true" signature="94:106" ph="..." />
+            <marker date="1540311484381" expanded="true" signature="441:591" ph="..." />
+            <marker date="1540311484381" expanded="true" signature="951:970" ph="..." />
+            <marker date="1540311484381" expanded="true" signature="1076:1079" ph="..." />
+            <marker date="1540311484381" expanded="true" signature="1092:1097" ph="..." />
+            <marker date="1540311484381" expanded="true" signature="1338:2204" ph="..." />
+            <marker date="1540311484381" expanded="true" signature="2018:2082" ph="..." />
           </folding>
         </state>
       </provider>

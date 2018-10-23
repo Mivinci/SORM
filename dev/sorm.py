@@ -1,3 +1,4 @@
+from datetime import datetime
 import pymysql
 
 
@@ -5,21 +6,35 @@ class Field:
     pass
 
 
+class AutoField(Field):
+    pass
+
+
 class StrField(Field):
     def __init__(self, maxlen, default):
+        self.type = 'VARCHAR'
         self.maxlen = maxlen
         self.default = default
 
 
 class IntField(Field):
     def __init__(self, maxlen, default):
+        self.type = 'INT'
         self.maxlen = maxlen
         self.default = default
+
+
+class DatetimeField(Field):
+    def __init__(self):
+        self.type = 'DATETIME'
+        self.maxlen = 6
+        self.default = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
 
 class Expr:
     def __init__(self, model, **kwargs):
         self.fields = [(key, val.__dict__) for key, val in model.__dict__.items() if isinstance(val, Field)]
+        self.table = model.__name__.lower() if not model.__dict__.get('__table__') else model.__dict__.get('__table__')
         self.model = model
         self.params = kwargs
 
@@ -31,6 +46,7 @@ class Expr:
 
     def create(self):
         print(self.fields)
+        print(self.table)
 
 
 class Model:

@@ -7,6 +7,8 @@
           <option value="dev.test.User.*" />
           <option value="sorm.StrField" />
           <option value="sorm.IntField" />
+          <option value="sorm.*" />
+          <option value="dev.test.Student.*" />
         </list>
       </option>
     </inspection_tool>
