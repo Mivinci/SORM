@@ -1,4 +1,3 @@
-from datetime import datetime
 import pymysql
 
 
@@ -11,24 +10,24 @@ class AutoField(Field):
 
 
 class StrField(Field):
-    def __init__(self, maxlen, default):
+    def __init__(self, **kwargs):
         self.type = 'VARCHAR'
-        self.maxlen = maxlen
-        self.default = default
+        self.maxlen = '255' if not kwargs.get('maxlen') else kwargs.get('maxlen')
+        self.default = None if not kwargs.get('default') else kwargs.get('default')
 
 
 class IntField(Field):
-    def __init__(self, maxlen, default):
+    def __init__(self, **kwargs):
         self.type = 'INT'
-        self.maxlen = maxlen
-        self.default = default
+        self.maxlen = '11' if not kwargs.get('maxlen') else kwargs.get('maxlen')
+        self.default = None if not kwargs.get('default') else kwargs.get('default')
 
 
-class DatetimeField(Field):
-    def __init__(self):
-        self.type = 'DATETIME'
-        self.maxlen = 6
-        self.default = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+class TimeField(Field):
+    def __init__(self, **kwargs):
+        self.type = 'TIMESTAMP'
+        self.default = 'NOW()' if not kwargs.get('default') else f"""'{kwargs.get('default')}'"""
+        self.auto_update = True if 'auto_update' in kwargs.keys() and kwargs.get('auto_update') else False
 
 
 class Expr:
