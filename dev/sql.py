@@ -25,8 +25,9 @@ class Sql:
         pass
 
     @classmethod
-    def select(cls):
-        pass
+    def select(cls, tb, needs, params):
+        cls.sql = cls.get_select_sql(tb, needs, params)
+        return cls
 
     @classmethod
     def get_create_sql(cls, tb, fds):
@@ -44,14 +45,13 @@ class Sql:
 
     @classmethod
     def get_insert_sql(cls, tb, data):
-        _sql = f"""INSERT INTO `{tb}` ("""
-        for key in data.keys():
-            _sql += f"""{key}, """
-        _sql += f""") VALUES ("""
-        for val in data.values():
-            _sql += f"""'{val}', """
-        _sql += f""");"""
+        _sql = f"""INSERT INTO `{tb}` ({', '.join(data.keys())}) VALUES ('{"', '".join(data.values())}')"""
         return _sql
 
-
-print(Sql.get_insert_sql('user', {'a': 'aaa', 'b': 'bbb', 'c': 1234}))
+    @classmethod
+    def get_select_sql(cls, tb, needs, params):
+        _sql = f"""SELECT * """ if not needs or '*' in needs else f"""SELECT ({"', '".join(needs)}) """
+        _sql += f"""FROM {tb} WHERE """
+        _sql += " AND ".join([f"""`{key}` = '{val}'""" for key, val in params.items()])
+        _sql += f""";"""
+        return _sql

@@ -34,9 +34,9 @@
       <usages-collector id="statistics.vcs.git.usages" />
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Python Console" value="280" />
+          <entry key="Python Console" value="516" />
           <entry key="md" value="69" />
-          <entry key="py" value="8016" />
+          <entry key="py" value="9338" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -48,33 +48,36 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="69" />
-          <entry key="Python" value="8296" />
+          <entry key="Python" value="9854" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.24697337">
+    <splitter split-orientation="horizontal" split-proportion="0.49071833">
       <split-first>
         <leaf>
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/dev/sorm.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="343">
-                  <caret line="56" column="23" lean-forward="true" selection-start-line="56" selection-start-column="23" selection-end-line="56" selection-end-column="23" />
+                <state relative-caret-position="1515">
+                  <caret line="120" selection-start-line="120" selection-end-line="120" />
                   <folding>
                     <element signature="e#0#23#0" expanded="true" />
-                    <marker date="1540382352383" expanded="true" signature="126:138" ph="..." />
-                    <marker date="1540382352383" expanded="true" signature="666:940" ph="..." />
-                    <marker date="1540382352383" expanded="true" signature="1451:1554" ph="..." />
-                    <marker date="1540382352383" expanded="true" signature="1571:1590" ph="..." />
-                    <marker date="1540382352383" expanded="true" signature="1737:1779" ph="..." />
-                    <marker date="1540382352383" expanded="true" signature="1819:1822" ph="..." />
-                    <marker date="1540382352383" expanded="true" signature="1835:1840" ph="..." />
-                    <marker date="1540382352383" expanded="true" signature="2136:3103" ph="..." />
-                    <marker date="1540382352383" expanded="true" signature="2697:2720" ph="..." />
-                    <marker date="1540382352383" expanded="true" signature="3024:3059" ph="..." />
-                    <marker date="1540382352383" expanded="true" signature="3103:3105" ph="..." />
+                    <marker date="1540400830501" expanded="true" signature="126:138" ph="..." />
+                    <marker date="1540400830501" expanded="true" signature="666:940" ph="..." />
+                    <marker date="1540400830501" expanded="true" signature="1475:1578" ph="..." />
+                    <marker date="1540400830501" expanded="true" signature="1595:1604" ph="..." />
+                    <marker date="1540400830501" expanded="true" signature="1758:1810" ph="..." />
+                    <marker date="1540400830501" expanded="true" signature="1827:1836" ph="..." />
+                    <marker date="1540400830501" expanded="true" signature="1960:2001" ph="..." />
+                    <marker date="1540400830501" expanded="true" signature="2041:2044" ph="..." />
+                    <marker date="1540400830501" expanded="true" signature="2057:2062" ph="..." />
+                    <marker date="1540400830501" expanded="true" signature="2139:2145" ph="..." />
+                    <marker date="1540400830501" expanded="true" signature="2358:3394" ph="..." />
+                    <marker date="1540400830501" expanded="true" signature="2919:2942" ph="..." />
+                    <marker date="1540400830501" expanded="true" signature="3315:3350" ph="..." />
+                    <marker date="1540400830501" expanded="true" signature="3394:3396" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -84,26 +87,15 @@
       </split-first>
       <split-second>
         <leaf>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/test.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="306">
-                  <caret line="18" selection-start-line="18" selection-end-line="18" />
+                <state relative-caret-position="391">
+                  <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
                   <folding>
-                    <marker date="1540383559390" expanded="true" signature="240:373" ph="..." />
+                    <element signature="e#0#67#0" expanded="true" />
+                    <marker date="1540400830495" expanded="true" signature="286:447" ph="..." />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/README.md">
-              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-                <state split_layout="SPLIT">
-                  <first_editor relative-caret-position="34">
-                    <caret line="2" column="49" lean-forward="true" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="49" />
-                  </first_editor>
-                  <second_editor />
                 </state>
               </provider>
             </entry>
@@ -120,10 +112,10 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/dev/sql.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="306">
-                  <caret line="51" column="33" lean-forward="true" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
+                <state relative-caret-position="391">
+                  <caret line="56" column="19" lean-forward="true" selection-start-line="56" selection-start-column="19" selection-end-line="56" selection-end-column="19" />
                   <folding>
-                    <marker date="1540383377624" expanded="true" signature="179:248" ph="..." />
+                    <marker date="1540398401883" expanded="true" signature="179:248" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -150,10 +142,10 @@
         <option value="$PROJECT_DIR$/dev/test.py" />
         <option value="$PROJECT_DIR$/sorm.py" />
         <option value="$PROJECT_DIR$/dev/conf/config.py" />
-        <option value="$PROJECT_DIR$/dev/sorm.py" />
-        <option value="$PROJECT_DIR$/dev/sql.py" />
-        <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/dev/sql.py" />
+        <option value="$PROJECT_DIR$/dev/sorm.py" />
+        <option value="$PROJECT_DIR$/test.py" />
       </list>
     </option>
   </component>
@@ -349,7 +341,7 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1137339" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1137339" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -363,7 +355,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007153" side_tool="true" weight="0.32891566" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32891566" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32891566" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49928468" weight="0.32891566" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -421,47 +413,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/sorm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="56" column="23" lean-forward="true" selection-start-line="56" selection-start-column="23" selection-end-line="56" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <marker date="1540382352383" expanded="true" signature="126:138" ph="..." />
-            <marker date="1540382352383" expanded="true" signature="666:940" ph="..." />
-            <marker date="1540382352383" expanded="true" signature="1451:1554" ph="..." />
-            <marker date="1540382352383" expanded="true" signature="1571:1590" ph="..." />
-            <marker date="1540382352383" expanded="true" signature="1737:1779" ph="..." />
-            <marker date="1540382352383" expanded="true" signature="1819:1822" ph="..." />
-            <marker date="1540382352383" expanded="true" signature="1835:1840" ph="..." />
-            <marker date="1540382352383" expanded="true" signature="2136:3103" ph="..." />
-            <marker date="1540382352383" expanded="true" signature="2697:2720" ph="..." />
-            <marker date="1540382352383" expanded="true" signature="3024:3059" ph="..." />
-            <marker date="1540382352383" expanded="true" signature="3103:3105" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/sql.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="51" column="33" lean-forward="true" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
-          <folding>
-            <marker date="1540383377624" expanded="true" signature="179:248" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <marker date="1540383559390" expanded="true" signature="240:373" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -469,6 +420,51 @@
             <caret line="2" column="49" lean-forward="true" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="49" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/sql.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="56" column="19" lean-forward="true" selection-start-line="56" selection-start-column="19" selection-end-line="56" selection-end-column="19" />
+          <folding>
+            <marker date="1540398401883" expanded="true" signature="179:248" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/sorm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1515">
+          <caret line="120" selection-start-line="120" selection-end-line="120" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+            <marker date="1540400830501" expanded="true" signature="126:138" ph="..." />
+            <marker date="1540400830501" expanded="true" signature="666:940" ph="..." />
+            <marker date="1540400830501" expanded="true" signature="1475:1578" ph="..." />
+            <marker date="1540400830501" expanded="true" signature="1595:1604" ph="..." />
+            <marker date="1540400830501" expanded="true" signature="1758:1810" ph="..." />
+            <marker date="1540400830501" expanded="true" signature="1827:1836" ph="..." />
+            <marker date="1540400830501" expanded="true" signature="1960:2001" ph="..." />
+            <marker date="1540400830501" expanded="true" signature="2041:2044" ph="..." />
+            <marker date="1540400830501" expanded="true" signature="2057:2062" ph="..." />
+            <marker date="1540400830501" expanded="true" signature="2139:2145" ph="..." />
+            <marker date="1540400830501" expanded="true" signature="2358:3394" ph="..." />
+            <marker date="1540400830501" expanded="true" signature="2919:2942" ph="..." />
+            <marker date="1540400830501" expanded="true" signature="3315:3350" ph="..." />
+            <marker date="1540400830501" expanded="true" signature="3394:3396" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="e#0#67#0" expanded="true" />
+            <marker date="1540400830495" expanded="true" signature="286:447" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

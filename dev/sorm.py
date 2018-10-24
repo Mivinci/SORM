@@ -38,23 +38,28 @@ class Expr:
         self.table = model.__name__.lower() if not model.__dict__.get('__table__') else model.__dict__.get('__table__')
         self.model = model
         self.params = kwargs
+        self.needs = ()
 
     def create(self):
         sql = Sql.create(self.table, self.fields).sql
         Database.connect(**DB_CONFIG).execute(sql)
-        Database.close()
 
     def drop(self):
         Database.connect(**DB_CONFIG).execute(Sql.drop(self.table).sql)
-        Database.close()
 
     def select(self):
-        pass
+        print(self.needs, self.params)
+        sql = Sql.select(self.table, self.needs, self.params).sql
+        return Database.connect(**DB_CONFIG).execute(sql).fetchall()
+
+    def need(self, *args):
+        self.needs = args
+        return self
 
     def insert(self):
-        sql = Sql.create(self.table, self.params).sql
+        sql = Sql.insert(self.table, self.params).sql
         Database.connect(**DB_CONFIG).execute(sql)
-        Database.close()
+        # Database.close()
 
     def delete(self):
         pass
@@ -106,9 +111,12 @@ class Database:
     def execute(cls, sql, *args):
         try:
             with cls.get_conn().cursor() as cursor:
-                return cursor.execute(sql, args)
+                cursor.execute(sql, args)
+                return cursor
         except Exception as e:
             print(e)
+        finally:
+            cls.conn.close()
 
     @classmethod
     def close(cls):
