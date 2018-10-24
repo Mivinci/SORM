@@ -1,29 +1,4 @@
-import pymysql
-
-table = 'student_info'
-fields = [('name', {'type': 'VARCHAR', 'maxlen': '255', 'default': None}),
-          ('stu_num', {'type': 'VARCHAR', 'maxlen': '255', 'default': None}),
-          ('class_num', {'type': 'VARCHAR', 'maxlen': '255', 'default': None}), ('first_time', {'type': 'TIMESTAMP', 'default': 'NOW()', 'auto_update': False})]
-
-
-# sql = f"""CREATE TABLE `{table}` (`id` int(11) unsigned NOT NULL AUTO_INCREMENT, """
-# for field in fields:
-# 	sql += f"""`{field[0]}` {field[1]['type']}"""
-# 	sql += f"""({field[1]['maxlen']}) """ if 'maxlen' in field[1].keys() else f""" """
-# 	sql += f"""DEFAULT NULL, """ if not field[1]['default'] else field[1]['default']
-
-# sql += f""") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;"""
-
-
-# print(sql)
-
-# what is the next
-## pymysql execute test
-# Something you gotta know
-## indent error 
-
-
-class Sql():
+class Sql:
     sql = None
 
     @classmethod
@@ -32,8 +7,13 @@ class Sql():
         return cls
 
     @classmethod
-    def insert(cls, tb, map):
-        # cls.sql = cls.get_insert_sql(tb, map)
+    def drop(cls, tb):
+        cls.sql = f"""DROP TABLE `{tb}`;"""
+        return cls
+
+    @classmethod
+    def insert(cls, tb, data):
+        cls.sql = cls.get_insert_sql(tb, data)
         return cls
 
     @classmethod
@@ -62,16 +42,16 @@ class Sql():
         _sql += f"""PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;"""
         return _sql
 
+    @classmethod
+    def get_insert_sql(cls, tb, data):
+        _sql = f"""INSERT INTO `{tb}` ("""
+        for key in data.keys():
+            _sql += f"""{key}, """
+        _sql += f""") VALUES ("""
+        for val in data.values():
+            _sql += f"""'{val}', """
+        _sql += f""");"""
+        return _sql
 
-print(Sql.create(table, fields).sql)
-# print(Sql.get_create_sql(table, fields))
 
-
-conn = pymysql.connect(user='root', passwd='qwerty',
-                       host='127.0.0.1', port=3306,
-                       db='wx', charset='utf8')
-with conn.cursor() as cursor:
-    sql = Sql.create(table, fields).sql
-    cursor.execute(sql)
-
-conn.close()
+print(Sql.get_insert_sql('user', {'a': 'aaa', 'b': 'bbb', 'c': 1234}))

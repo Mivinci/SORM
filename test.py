@@ -1,15 +1,18 @@
-from sorm import Database
+from dev.sorm import Model, StrField, IntField, TimeField
 
 
-db_config = {
-    'user': 'root',
-    'passwd': 'qwerty',
-    'host': '127.0.0.1',
-    'port': 3306,
-    'db': 'jwzx',
-    'charset': 'utf8'
-}
+class User(Model):
+    name = StrField(maxlen=25)
+    age = IntField(default=23)
+    first_time = TimeField(auto_update=True)
 
 
-db = Database.connect(**db_config)
-print(db.execute('select * from `stu` where WHERE `student_num` = 2017213068').fetchall())
+class Student(Model):
+    __table__ = 'student_info'
+    name = StrField()
+    stu_num = StrField()
+    class_num = StrField()
+    first_time = TimeField()
+
+
+Student.migrate().create()

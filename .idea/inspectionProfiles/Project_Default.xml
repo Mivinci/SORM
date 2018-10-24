@@ -9,6 +9,8 @@
           <option value="sorm.IntField" />
           <option value="sorm.*" />
           <option value="dev.test.Student.*" />
+          <option value="dev.sorm.*" />
+          <option value="sql" />
         </list>
       </option>
     </inspection_tool>

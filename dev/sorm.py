@@ -1,3 +1,5 @@
+from dev.sql import Sql
+from dev.conf.config import DB_CONFIG
 import pymysql
 
 
@@ -37,15 +39,28 @@ class Expr:
         self.model = model
         self.params = kwargs
 
+    def create(self):
+        sql = Sql.create(self.table, self.fields).sql
+        Database.connect(**DB_CONFIG).execute(sql)
+        Database.close()
+
+    def drop(self):
+        Database.connect(**DB_CONFIG).execute(Sql.drop(self.table).sql)
+        Database.close()
+
     def select(self):
         pass
 
     def insert(self):
+        sql = Sql.create(self.table, self.params).sql
+        Database.connect(**DB_CONFIG).execute(sql)
+        Database.close()
+
+    def delete(self):
         pass
 
-    def create(self):
-        print(self.fields)
-        print(self.table)
+    def update(self, **kwargs):
+        pass
 
 
 class Model:
@@ -65,8 +80,7 @@ class Model:
 
 class Database:
     conn = None
-    db_config = {}
-    auto_commit = True
+    db_config = None
 
     @classmethod
     def connect(cls, **kwargs):
@@ -78,18 +92,27 @@ class Database:
             db=kwargs.get('database'),
             charset=kwargs.get('charset')
         )
-        cls.conn.autocommit(cls.auto_commit)
-        cls.db_config.update(kwargs)
+        cls.conn.autocommit(True)
+        cls.db_config = kwargs
+        return cls
 
     @classmethod
     def get_conn(cls):
         if not cls.conn or not cls.conn.open:
-            cls.connect(**cls.db_config)
+            cls.conn = cls.connect(**db_config)
         return cls.conn
 
     @classmethod
     def execute(cls, sql, *args):
-        return cls.get_conn().cursor().execute(sql, args)
+        try:
+            with cls.get_conn().cursor() as cursor:
+                return cursor.execute(sql, args)
+        except Exception as e:
+            print(e)
+
+    @classmethod
+    def close(cls):
+        cls.conn.close()
 
     @classmethod
     def get_db_config(cls):
@@ -97,5 +120,4 @@ class Database:
 
     def __del__(self):
         self.conn.close()
-
 
