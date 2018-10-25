@@ -16,17 +16,16 @@ class Student(Model):
 
 
 # Student.migrate().drop()
-# Student.migrate().create()
+Student.migrate().create()
 
-# Student.new(name='Jack', stu_num='2019213060',  class_num='08051903').insert()
-# Student.where(id=4).delete()
-
+Student.new(name='Jack', stu_num='2019213060').insert()
 # Student.where(name='Jack', class_num='2019213056').update(stu_num='2019213056', class_num='08051903')
 
-
-# what's next
-# fetchall tuple -> dict
+Student.where(id=4).delete()
 
 
-s = Student.where(name='Jack').need('name', 'stu_num').select()
-print(s)
+# s = Student.where(name='Jack').need('name', 'stu_num').select()
+# print(s)
+
+# c = Student.migrate().count('class_num')
+# print(c)

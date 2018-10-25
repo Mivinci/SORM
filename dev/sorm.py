@@ -67,7 +67,9 @@ class Expr:
     def update(self, **kwargs):
         sql = Sql.update(self.table, self.params, kwargs).sql
         Database.connect(**DB_CONFIG).execute(sql)
-        print(sql)
+
+    def count(self, field):
+        return Database.connect(**DB_CONFIG).execute(Sql.count(self.table, field).sql).fetchone()[0]
 
 
 class Model:
@@ -127,9 +129,6 @@ class Database:
     @classmethod
     def get_db_config(cls):
         return cls.db_config
-
-    def __del__(self):
-        self.conn.close()
 
 
 def tuple_to_list(keys, t):

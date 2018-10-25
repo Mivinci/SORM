@@ -123,10 +123,11 @@ User.where(name='Tom', age=23).need('age').select()
 提供的使用接口有
 
 ```python
-Object.migrate().create() # 建表
-                .drop()   # 删表
+Object.migrate().create()                    # 建表
+                .drop()                      # 删表
+    			.count('字段名')              # 查询该字段记录值数量
 
-Object.new(**kwargs).insert() # 插入记录
+Object.new(**kwargs).insert() 			     # 插入记录
 
 Object.where(**kwargs).delete()              # 删除记录
                       .update(**kwargs)      # 更新记录
@@ -134,6 +135,10 @@ Object.where(**kwargs).delete()              # 删除记录
                       .need(*args).select()  # 查询记录
                       
 ```
+
+
+
+### 其他
 
 
 

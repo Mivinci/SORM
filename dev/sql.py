@@ -32,6 +32,11 @@ class Sql:
         return cls
 
     @classmethod
+    def count(cls, tb, field):
+        cls.sql = cls.get_count_sql(tb, field)
+        return cls
+
+    @classmethod
     def get_create_sql(cls, tb, fds):
         _sql = f"""CREATE TABLE `{tb}` (`id` int(11) unsigned NOT NULL AUTO_INCREMENT, """
         for field in fds:
@@ -70,3 +75,7 @@ class Sql:
         _sql += ", ".join([f"""`{key}` = '{val}'""" for key, val in new.items()]) + f""" WHERE """
         _sql += " AND ".join([f"""`{key}` = '{val}'""" for key, val in wheres.items()]) + f""";"""
         return _sql
+
+    @classmethod
+    def get_count_sql(cls, tb, field):
+        return f"""SELECT COUNT(`{field}`) FROM `{tb}`;"""
