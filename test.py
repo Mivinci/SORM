@@ -1,5 +1,4 @@
 from dev.sorm import Model, StrField, IntField, TimeField, Database
-from dev.conf.config import DB_CONFIG
 
 
 class User(Model):
@@ -19,8 +18,10 @@ class Student(Model):
 # Student.migrate().drop()
 # Student.migrate().create()
 
-# Student.new(name='Jack', class_num='2019213056').insert()
-# print(Student.where(name='Jack', class_num='2021213056').need('name').select())
+# Student.new(name='Jack', stu_num='2019213056',  class_num='08051903').insert()
+# Student.where(name='Jack', class_num='2019213056').delete()
+
+Student.where(name='Jack', class_num='2019213056').update(stu_num='2019213056', class_num='08051903')
 
 
 # what's next

@@ -100,7 +100,7 @@ User.where(name='Tom', age=23).update(name='Jerry')
 
 ### 查询记录
 
-若要查询 name为Tom， age为23的记录
+若要查询 name为Tom， age为23的整条记录
 
 ```python
 User.where(name='Tom', age=23).select()
@@ -111,6 +111,8 @@ User.where(name='Tom', age=23).select()
 ```python
 User.where(name='Tom', age=23).need('age').select()
 ```
+
+其中若 `need()` 中输入的参数出现 `'*'` 也可以表示查询整条记录
 
 
 
@@ -132,5 +134,11 @@ Object.where(**kwargs).delete()              # 删除记录
 ```
 
 
+
+
+
+下个版本预计添加:
+
+​	· 外键 `ForeignKey(related='xxx')` 
 
 ti go

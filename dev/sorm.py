@@ -61,10 +61,13 @@ class Expr:
         Database.connect(**DB_CONFIG).execute(sql)
 
     def delete(self):
-        pass
+        sql = Sql.delete(self.table, self.params).sql
+        Database.connect(**DB_CONFIG).execute(sql)
 
     def update(self, **kwargs):
-        pass
+        sql = Sql.update(self.table, self.params, kwargs).sql
+        Database.connect(**DB_CONFIG).execute(sql)
+        print(sql)
 
 
 class Model:

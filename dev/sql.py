@@ -17,12 +17,14 @@ class Sql:
         return cls
 
     @classmethod
-    def delete(cls):
-        pass
+    def delete(cls, tb, data):
+        cls.sql = cls.get_delete_sql(tb, data)
+        return cls
 
     @classmethod
-    def update(cls):
-        pass
+    def update(cls, tb, wheres, new):
+        cls.sql = cls.get_update_sql(tb, wheres, new)
+        return cls
 
     @classmethod
     def select(cls, tb, needs, params):
@@ -45,7 +47,7 @@ class Sql:
 
     @classmethod
     def get_insert_sql(cls, tb, data):
-        _sql = f"""INSERT INTO `{tb}` ({', '.join(data.keys())}) VALUES ('{"', '".join(data.values())}')"""
+        _sql = f"""INSERT INTO `{tb}` ({', '.join(data.keys())}) VALUES ('{"', '".join(data.values())}');"""
         return _sql
 
     @classmethod
@@ -54,4 +56,17 @@ class Sql:
         _sql += f"""FROM {tb} WHERE """
         _sql += " AND ".join([f"""`{key}` = '{val}'""" for key, val in params.items()])
         _sql += f""";"""
+        return _sql
+
+    @classmethod
+    def get_delete_sql(cls, tb, data):
+        _sql = f"""DELETE FROM `{tb}` WHERE """
+        _sql += " AND ".join([f"""`{key}` = '{val}'""" for key, val in data.items()]) + f""";"""
+        return _sql
+
+    @classmethod
+    def get_update_sql(cls, tb, wheres: dict, new: dict):
+        _sql = f"""UPDATE `{tb}` SET """
+        _sql += ", ".join([f"""`{key}` = '{val}'""" for key, val in new.items()]) + f""" WHERE """
+        _sql += " AND ".join([f"""`{key}` = '{val}'""" for key, val in wheres.items()]) + f""";"""
         return _sql
