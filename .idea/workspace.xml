@@ -35,9 +35,9 @@
       <usages-collector id="statistics.vcs.git.usages" />
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Python Console" value="782" />
+          <entry key="Python Console" value="833" />
           <entry key="md" value="69" />
-          <entry key="py" value="11752" />
+          <entry key="py" value="11863" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -49,7 +49,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="69" />
-          <entry key="Python" value="12534" />
+          <entry key="Python" value="12696" />
         </counts>
       </usages-collector>
     </session>
@@ -61,24 +61,24 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/dev/sorm.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="175">
-                  <caret line="90" column="19" selection-start-line="90" selection-start-column="19" selection-end-line="90" selection-end-column="19" />
+                <state relative-caret-position="506">
+                  <caret line="150" column="25" lean-forward="true" selection-start-line="150" selection-start-column="25" selection-end-line="150" selection-end-column="25" />
                   <folding>
                     <element signature="e#0#23#0" expanded="true" />
-                    <marker date="1540483670797" expanded="true" signature="126:138" ph="..." />
-                    <marker date="1540483670797" expanded="true" signature="666:940" ph="..." />
-                    <marker date="1540483670797" expanded="true" signature="1473:1551" ph="..." />
-                    <marker date="1540483670797" expanded="true" signature="1569:1577" ph="..." />
-                    <marker date="1540483670797" expanded="true" signature="1862:1914" ph="..." />
-                    <marker date="1540483670797" expanded="true" signature="1931:1940" ph="..." />
-                    <marker date="1540483670797" expanded="true" signature="2037:2170" ph="..." />
-                    <marker date="1540483670797" expanded="true" signature="2441:2443" ph="..." />
-                    <marker date="1540483670797" expanded="true" signature="2456:2461" ph="..." />
-                    <marker date="1540483670797" expanded="true" signature="2538:2544" ph="..." />
-                    <marker date="1540483670797" expanded="true" signature="2777:3763" ph="..." />
-                    <marker date="1540483670797" expanded="true" signature="3338:3361" ph="..." />
-                    <marker date="1540483670797" expanded="true" signature="4020:4024" ph="..." />
-                    <marker date="1540483670797" expanded="true" signature="4072:4143" ph="..." />
+                    <marker date="1540483814134" expanded="true" signature="126:138" ph="..." />
+                    <marker date="1540483814134" expanded="true" signature="666:940" ph="..." />
+                    <marker date="1540483814134" expanded="true" signature="1473:1551" ph="..." />
+                    <marker date="1540483814134" expanded="true" signature="1569:1577" ph="..." />
+                    <marker date="1540483814134" expanded="true" signature="1862:1914" ph="..." />
+                    <marker date="1540483814134" expanded="true" signature="1931:1940" ph="..." />
+                    <marker date="1540483814134" expanded="true" signature="2070:2236" ph="..." />
+                    <marker date="1540483814134" expanded="true" signature="2540:2542" ph="..." />
+                    <marker date="1540483814134" expanded="true" signature="2555:2560" ph="..." />
+                    <marker date="1540483814134" expanded="true" signature="2637:2643" ph="..." />
+                    <marker date="1540483814134" expanded="true" signature="2876:3877" ph="..." />
+                    <marker date="1540483814134" expanded="true" signature="3437:3460" ph="..." />
+                    <marker date="1540483814134" expanded="true" signature="4134:4138" ph="..." />
+                    <marker date="1540483814134" expanded="true" signature="4186:4257" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -91,8 +91,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/test.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="357">
-                  <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+                <state relative-caret-position="476">
+                  <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
                 </state>
               </provider>
             </entry>
@@ -142,8 +142,8 @@
         <option value="$PROJECT_DIR$/dev/conf/config.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/dev/sql.py" />
-        <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/dev/sorm.py" />
+        <option value="$PROJECT_DIR$/test.py" />
       </list>
     </option>
   </component>
@@ -412,34 +412,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
+    <entry file="file://$PROJECT_DIR$/dev/sorm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+        <state relative-caret-position="506">
+          <caret line="150" column="25" lean-forward="true" selection-start-line="150" selection-start-column="25" selection-end-line="150" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+            <marker date="1540483814134" expanded="true" signature="126:138" ph="..." />
+            <marker date="1540483814134" expanded="true" signature="666:940" ph="..." />
+            <marker date="1540483814134" expanded="true" signature="1473:1551" ph="..." />
+            <marker date="1540483814134" expanded="true" signature="1569:1577" ph="..." />
+            <marker date="1540483814134" expanded="true" signature="1862:1914" ph="..." />
+            <marker date="1540483814134" expanded="true" signature="1931:1940" ph="..." />
+            <marker date="1540483814134" expanded="true" signature="2070:2236" ph="..." />
+            <marker date="1540483814134" expanded="true" signature="2540:2542" ph="..." />
+            <marker date="1540483814134" expanded="true" signature="2555:2560" ph="..." />
+            <marker date="1540483814134" expanded="true" signature="2637:2643" ph="..." />
+            <marker date="1540483814134" expanded="true" signature="2876:3877" ph="..." />
+            <marker date="1540483814134" expanded="true" signature="3437:3460" ph="..." />
+            <marker date="1540483814134" expanded="true" signature="4134:4138" ph="..." />
+            <marker date="1540483814134" expanded="true" signature="4186:4257" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/sorm.py">
+    <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="90" column="19" selection-start-line="90" selection-start-column="19" selection-end-line="90" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <marker date="1540483670797" expanded="true" signature="126:138" ph="..." />
-            <marker date="1540483670797" expanded="true" signature="666:940" ph="..." />
-            <marker date="1540483670797" expanded="true" signature="1473:1551" ph="..." />
-            <marker date="1540483670797" expanded="true" signature="1569:1577" ph="..." />
-            <marker date="1540483670797" expanded="true" signature="1862:1914" ph="..." />
-            <marker date="1540483670797" expanded="true" signature="1931:1940" ph="..." />
-            <marker date="1540483670797" expanded="true" signature="2037:2170" ph="..." />
-            <marker date="1540483670797" expanded="true" signature="2441:2443" ph="..." />
-            <marker date="1540483670797" expanded="true" signature="2456:2461" ph="..." />
-            <marker date="1540483670797" expanded="true" signature="2538:2544" ph="..." />
-            <marker date="1540483670797" expanded="true" signature="2777:3763" ph="..." />
-            <marker date="1540483670797" expanded="true" signature="3338:3361" ph="..." />
-            <marker date="1540483670797" expanded="true" signature="4020:4024" ph="..." />
-            <marker date="1540483670797" expanded="true" signature="4072:4143" ph="..." />
-          </folding>
+        <state relative-caret-position="476">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>

@@ -17,9 +17,15 @@ class Student(Model):
 
 # User.migrate().create()
 
-# User.new(name='Tom', age=23).insert()
+# s = User.new(name='Adam', age=40).insert()
 
-s = User.where(age=18, name='Katherine').delete()
+# s = User.where(age=18, name='Katherine').delete()
+
+# s = User.where(age=23).need('name').select()
+
+# s = User.migrate().count('name')
+
+s = User.migrate().drop()
 
 print(s)
 

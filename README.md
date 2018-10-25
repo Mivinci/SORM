@@ -1,6 +1,6 @@
 # SORM
 
-为 python-Flask 项目提供简单的对象关系映射API
+为 python-Flask 项目提供简单的对象关系映射APIs
 
 ## 'S' stands for simple, swift and stupid.
 
@@ -58,6 +58,10 @@ class User(Model):
 User.migrate().create()
 ```
 
+若表已存在，就不需要调用这一个API啦
+
+
+
 
 
 ### 删除表
@@ -65,6 +69,8 @@ User.migrate().create()
 ```python
 User.migrate().drop()
 ```
+
+返回 None
 
 
 
@@ -76,6 +82,8 @@ User.migrate().drop()
 User.new(name='Tom', age=23).insert()
 ```
 
+返回增加的记录的个数
+
 
 
 ### 删除一条数据
@@ -86,6 +94,8 @@ User.new(name='Tom', age=23).insert()
 User.where(name='Tom', age=23).delete()
 ```
 
+返回删除的记录的个数
+
 
 
 ### 更新一条记录
@@ -95,6 +105,8 @@ User.where(name='Tom', age=23).delete()
 ```python
 User.where(name='Tom', age=23).update(name='Jerry')
 ```
+
+返回更新的记录的个数
 
 
 
@@ -139,6 +151,40 @@ Object.where(**kwargs).delete()              # 删除记录
 
 
 ### 其他
+
+a
+
+该轮子还提供一些静态方法
+
+`tuple_to_list() `  将存放字段名的元组与 pymysql 返回的查询记录的元组组装成字典列表，如
+
+```python
+from dev.sorm import tuple_to_list
+
+keys = ('name', 'age')
+data = (('Tom', 23), ('Jerry', 21))
+
+res = tuple_to_list(keys, data)
+
+print(res)
+```
+
+结果如下：
+
+```python
+[
+    {
+        'name', 'Tom',
+        'age': 23
+    },
+    {
+        'name': 'Jerry',
+        'age': 21
+    }
+]
+```
+
+你懂我的意思吧
 
 
 
