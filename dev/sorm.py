@@ -49,8 +49,8 @@ class Expr:
 
     def select(self):
         sql = Sql.select(self.table, self.needs, self.params).sql
-        print(sql)
-        return Database.connect(**DB_CONFIG).execute(sql).fetchall()
+        return tuple_to_list(self.needs if self.needs else (fd[0] for fd in self.fields),
+                             Database.connect(**DB_CONFIG).execute(sql).fetchall())
 
     def need(self, *args):
         self.needs = args
@@ -133,6 +133,12 @@ class Database:
 
 
 def tuple_to_list(keys, t):
-    print(keys)
-    print(t)
-    pass
+    res = []
+    key_list = [key for key in keys]
+    start_i = 1 if 'id' in keys else 0
+    for each in t:
+        d = {}
+        for i, key in enumerate(key_list, start_i):
+            d[key] = each[i]
+        res.append(d)
+    return res
