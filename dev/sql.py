@@ -52,7 +52,7 @@ class Sql:
 
     @classmethod
     def get_select_sql(cls, tb, needs, params):
-        _sql = f"""SELECT * """ if not needs or '*' in needs else f"""SELECT ({"', '".join(needs)}) """
+        _sql = f"""SELECT * """ if not needs or '*' in needs else f"""SELECT `{"`, `".join(needs)}` """
         _sql += f"""FROM {tb} WHERE """
         _sql += " AND ".join([f"""`{key}` = '{val}'""" for key, val in params.items()])
         _sql += f""";"""

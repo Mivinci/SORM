@@ -48,8 +48,8 @@ class Expr:
         Database.connect(**DB_CONFIG).execute(Sql.drop(self.table).sql)
 
     def select(self):
-        print(self.needs, self.params)
         sql = Sql.select(self.table, self.needs, self.params).sql
+        print(sql)
         return Database.connect(**DB_CONFIG).execute(sql).fetchall()
 
     def need(self, *args):
@@ -131,3 +131,8 @@ class Database:
     def __del__(self):
         self.conn.close()
 
+
+def tuple_to_list(keys, t):
+    print(keys)
+    print(t)
+    pass

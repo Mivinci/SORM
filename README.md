@@ -106,6 +106,8 @@ User.where(name='Tom', age=23).update(name='Jerry')
 User.where(name='Tom', age=23).select()
 ```
 
+- 返回的是字典列表  `[{}, {} ...]`
+
 若只需要查询某一字段值，如 `age`
 
 ```python
