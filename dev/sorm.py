@@ -59,7 +59,6 @@ class Expr:
     def insert(self):
         sql = Sql.insert(self.table, self.params).sql
         Database.connect(**DB_CONFIG).execute(sql)
-        # Database.close()
 
     def delete(self):
         pass

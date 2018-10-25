@@ -21,3 +21,7 @@ class Student(Model):
 
 # Student.new(name='Jack', class_num='2019213056').insert()
 # print(Student.where(name='Jack', class_num='2021213056').need('name').select())
+
+
+# what's next
+# fetchall tuple -> dict
