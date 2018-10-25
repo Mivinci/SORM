@@ -37,7 +37,7 @@ class Expr:
         self.fields = [(key, val.__dict__) for key, val in model.__dict__.items() if isinstance(val, Field)]
         self.table = model.__name__.lower() if not model.__dict__.get('__table__') else model.__dict__.get('__table__')
         self.model = model
-        self.params = kwargs
+        self.params = stringify_dict_values(kwargs)
         self.needs = ()
 
     def create(self):
@@ -49,7 +49,7 @@ class Expr:
 
     def select(self):
         sql = Sql.select(self.table, self.needs, self.params).sql
-        return tuple_to_list(self.needs if self.needs else (fd[0] for fd in self.fields),
+        return tuple_to_list(self.needs if self.needs and '*' not in self.needs else (fd[0] for fd in self.fields),
                              Database.connect(**DB_CONFIG).execute(sql).fetchall())
 
     def need(self, *args):
@@ -59,14 +59,17 @@ class Expr:
     def insert(self):
         sql = Sql.insert(self.table, self.params).sql
         Database.connect(**DB_CONFIG).execute(sql)
+        return Database.affected
 
     def delete(self):
         sql = Sql.delete(self.table, self.params).sql
         Database.connect(**DB_CONFIG).execute(sql)
+        return Database.affected
 
     def update(self, **kwargs):
         sql = Sql.update(self.table, self.params, kwargs).sql
         Database.connect(**DB_CONFIG).execute(sql)
+        return Database.affected
 
     def count(self, field):
         return Database.connect(**DB_CONFIG).execute(Sql.count(self.table, field).sql).fetchone()[0]
@@ -88,6 +91,7 @@ class Model:
 
 
 class Database:
+    affected = None
     conn = None
     db_config = None
 
@@ -115,10 +119,10 @@ class Database:
     def execute(cls, sql, *args):
         try:
             with cls.get_conn().cursor() as cursor:
-                cursor.execute(sql, args)
+                cls.affected = cursor.execute(sql, args)
                 return cursor
         except Exception as e:
-            print(e)
+            return e
         finally:
             cls.conn.close()
 
@@ -134,10 +138,15 @@ class Database:
 def tuple_to_list(keys, t):
     res = []
     key_list = [key for key in keys]
-    start_i = 1 if 'id' in keys else 0
     for each in t:
         d = {}
-        for i, key in enumerate(key_list, start_i):
-            d[key] = each[i]
+        for i, key in enumerate(key_list):
+            d[key] = each[i] if len(each) == len(key_list) else each[1::][i]
         res.append(d)
     return res
+
+
+def stringify_dict_values(d: dict):
+    for key, val in d.items():
+        d[key] = str(val)
+    return d

@@ -5,6 +5,7 @@
       <w>maxlen</w>
       <w>passwd</w>
       <w>sorm</w>
+      <w>vals</w>
     </words>
   </dictionary>
 </component>

@@ -1,4 +1,4 @@
-from dev.sorm import Model, StrField, IntField, TimeField, Database
+from dev.sorm import Model, StrField, IntField, TimeField
 
 
 class User(Model):
@@ -15,17 +15,11 @@ class Student(Model):
     first_time = TimeField()
 
 
-# Student.migrate().drop()
-Student.migrate().create()
+# User.migrate().create()
 
-Student.new(name='Jack', stu_num='2019213060').insert()
-# Student.where(name='Jack', class_num='2019213056').update(stu_num='2019213056', class_num='08051903')
+# User.new(name='Tom', age=23).insert()
 
-Student.where(id=4).delete()
+s = User.where(age=18, name='Katherine').delete()
 
+print(s)
 
-# s = Student.where(name='Jack').need('name', 'stu_num').select()
-# print(s)
-
-# c = Student.migrate().count('class_num')
-# print(c)
