@@ -158,8 +158,6 @@ Object.where(**kwargs).delete()              # 删除记录
 
 ### 其他
 
-a
-
 该轮子还提供一些静态方法
 
 `tuple_to_list() `  将存放字段名的元组与 pymysql 返回的查询记录的元组组装成字典列表，如
@@ -202,12 +200,36 @@ print(res)
 
 <hr/>
 
-下个版本预计添加:
+#### 下个版本预计添加:
 
-​	· 外键 `ForeignKey(related='xxx')` 
+- 外键 `ForeignKey()`
+
+  ```python
+  # Something like:
+  class Teacher(Model):
+      ...
+  
+  class Student(Model):
+      teacher = ForeignKey(related='id')
+      ...
+      
+  Student.new(teacher=Teacher, ...).insert()
+  ```
 
 
 
-## Welcome to issues
+   
 
-ti go
+- 读取并执行自定义的sql语句
+
+  ```python
+  # Something like:
+  Object.migrate().read('path/xxx.sql').do()   # 返回影响的行数
+  ```
+
+
+
+
+## Go get me some issues
+
+![errors](images/errors.png)
