@@ -43,9 +43,11 @@ class Expr:
     def create(self):
         sql = Sql.create(self.table, self.fields).sql
         Database.connect(**DB_CONFIG).execute(sql)
+        return Database.affected
 
     def drop(self):
         Database.connect(**DB_CONFIG).execute(Sql.drop(self.table).sql)
+        return Database.affected
 
     def select(self):
         sql = Sql.select(self.table, self.needs, self.params).sql

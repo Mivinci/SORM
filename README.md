@@ -6,6 +6,10 @@
 
 
 
+![huaji](images/huaji.GIF)
+
+
+
 ### 使用前
 
 需要的 py 库
@@ -24,7 +28,7 @@ pip3 -r requirement.txt
 
 ### 创建模型
 
-如需创建表名为 'user'，若有字段 'id', 'name', 'age', 'first_time'
+如需创建表名为 `user`，若有字段 `id`, `name`, `age`, `first_time`
 
 ```python
 from dev.sorm import Model, StrField, IntField, TimeField
@@ -58,6 +62,8 @@ class User(Model):
 User.migrate().create()
 ```
 
+返回 0
+
 若表已存在，就不需要调用这一个API啦
 
 
@@ -70,7 +76,7 @@ User.migrate().create()
 User.migrate().drop()
 ```
 
-返回 None
+返回 0
 
 
 
@@ -184,14 +190,24 @@ print(res)
 ]
 ```
 
-你懂我的意思吧
+你懂我的意思吧 ~
 
 
 
 
+
+
+
+
+
+<hr/>
 
 下个版本预计添加:
 
 ​	· 外键 `ForeignKey(related='xxx')` 
+
+
+
+## Welcome to issues
 
 ti go

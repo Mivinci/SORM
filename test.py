@@ -8,14 +8,7 @@ class User(Model):
     first_time = TimeField(auto_update=True)
 
 
-class Student(Model):
-    name = StrField()
-    stu_num = StrField()
-    class_num = StrField()
-    first_time = TimeField()
-
-
-# User.migrate().create()
+# s = User.migrate().create()
 
 # s = User.new(name='Adam', age=40).insert()
 
@@ -25,7 +18,8 @@ class Student(Model):
 
 # s = User.migrate().count('name')
 
-s = User.migrate().drop()
+# s = User.migrate().drop()
 
-print(s)
+
+# print(s)
 
