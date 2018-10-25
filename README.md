@@ -33,9 +33,9 @@ pip3 -r requirement.txt
 ```python
 from dev.sorm import Model, StrField, IntField, TimeField
 
-class User(Model):    # 继承该库的 Model 类
-    name = StrField() # 默认值为NULL，默认最大长度255
-    age = IntField()  # 默认值为NULL，默认最大长度11
+class User(Model):            # 继承该库的 Model 类
+    name = StrField()         # 默认值为NULL，默认最大长度255
+    age = IntField()          # 默认值为NULL，默认最大长度11
     first_time = TimeField()  #默认值为第一次插入数据的时间，默认自动更新为False
 ```
 
@@ -46,7 +46,7 @@ class User(Model):    # 继承该库的 Model 类
 
 ```python
 class User(Model):
-    __table__ = 'user_info'  # 没这行 默认的表名为 'user'
+    __table__ = 'user_info'   # 没这行 默认的表名为 'user'
     name = StrField(default='xxx', maxlen=25)
     age = IntField(default='xxx', maxlen=11)
     first_time = TimeField(default='2018-10-24 23:59:59', auto_update=True)
