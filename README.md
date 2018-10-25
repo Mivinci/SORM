@@ -29,7 +29,7 @@ pip3 -r requirement.txt
 ```python
 from dev.sorm import Model, StrField, IntField, TimeField
 
-class User(Model):
+class User(Model):    # 继承该库的 Model 类
     name = StrField() # 默认值为NULL，默认最大长度255
     age = IntField()  # 默认值为NULL，默认最大长度11
     first_time = TimeField()  #默认值为第一次插入数据的时间，默认自动更新为False
@@ -42,7 +42,7 @@ class User(Model):
 
 ```python
 class User(Model):
-    __table__ = 'user_info'  # 没这行 默认的表明为 'user'
+    __table__ = 'user_info'  # 没这行 默认的表名为 'user'
     name = StrField(default='xxx', maxlen=25)
     age = IntField(default='xxx', maxlen=11)
     first_time = TimeField(default='2018-10-24 23:59:59', auto_update=True)
@@ -56,6 +56,14 @@ class User(Model):
 
 ```python
 User.migrate().create()
+```
+
+
+
+### 删除表
+
+```python
+User.migrate().drop()
 ```
 
 
@@ -104,3 +112,25 @@ User.where(name='Tom', age=23).select()
 User.where(name='Tom', age=23).need('age').select()
 ```
 
+
+
+### 总之
+
+提供的使用接口有
+
+```python
+Object.migrate().create() # 建表
+                .drop()   # 删表
+
+Object.new(**kwargs).insert() # 插入记录
+
+Object.where(**kwargs).delete()              # 删除记录
+                      .update(**kwargs)      # 更新记录
+                      .select()              # 查询记录
+                      .need(*args).select()  # 查询记录
+                      
+```
+
+
+
+ti go
