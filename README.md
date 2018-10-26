@@ -174,7 +174,7 @@ User.where(name='Tom', age=23).need('age').select()
 ```python
 Object.migrate().create()                    # 建表
                 .drop()                      # 删表
-    			.count('字段名')              # 查询该字段记录值数量
+                .count('字段名')              # 查询该字段记录值数量
 
 Object.new(**kwargs).insert() 			     # 插入记录
 

@@ -13,7 +13,7 @@ class User(Model):
 
 # s = User.where(age=18, name='Katherine').delete()
 
-s = User.where(name='覃小').need('name').select(fuzzy=True)
+# s = User.where(name='Tom').need('name').select(fuzzy=True)
 
 # s = User.where(name='Ally').update(age=23)
 
@@ -22,5 +22,5 @@ s = User.where(name='覃小').need('name').select(fuzzy=True)
 # s = User.migrate().drop()
 
 
-print(s)
+# print(s)
 

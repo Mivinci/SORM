@@ -1,1 +1,8 @@
-DB_CONFIG = {'user': 'root', 'password': 'qwerty', 'host': '127.0.0.1', 'port': '3306', 'database': 'wx', 'charset': 'utf8'}
+DB_CONFIG = {
+    'user': '',
+    'password': '',
+    'host': '',
+    'port': '3306',
+    'database': '',
+    'charset': 'utf8'
+}
