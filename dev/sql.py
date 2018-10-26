@@ -27,8 +27,8 @@ class Sql:
         return cls
 
     @classmethod
-    def select(cls, tb, needs, params):
-        cls.sql = cls.get_select_sql(tb, needs, params)
+    def select(cls, tb, needs, params, fuzzy):
+        cls.sql = cls.get_select_sql(tb, needs, params, fuzzy)
         return cls
 
     @classmethod
@@ -56,10 +56,11 @@ class Sql:
         return _sql
 
     @classmethod
-    def get_select_sql(cls, tb, needs, params):
+    def get_select_sql(cls, tb, needs, params, fuzzy):
         _sql = f"""SELECT * """ if not needs or '*' in needs else f"""SELECT `{"`, `".join(needs)}` """
         _sql += f"""FROM {tb} WHERE """
-        _sql += " AND ".join([f"""`{key}` = '{val}'""" for key, val in params.items()])
+        _sql += " AND ".join([f"""`{key}` = '{val}'""" for key, val in params.items()]) if not fuzzy \
+            else " AND ".join([f"""`{key}` LIKE '%%{val}%%'""" for key, val in params.items()])
         _sql += f""";"""
         return _sql
 

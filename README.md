@@ -24,7 +24,7 @@ pip3 install pymysql
 pip3 -r requirement.txt
 ```
 
-
+<br><br>
 
 ### 数据库配置文件
 
@@ -44,7 +44,7 @@ python3 start.py user password database server_url
 
 或更简单粗暴，直接改内置的配置文件 (自己找8～)
 
-
+<br><br>
 
 ### 创建模型
 
@@ -74,7 +74,7 @@ class User(Model):
 
 - 目前仅支持以上有的自定义初始值
 
-
+<br><br>
 
 ### 创建表
 
@@ -86,9 +86,7 @@ User.migrate().create()
 
 若表已存在，就不需要调用这一个API啦
 
-
-
-
+<br><br>
 
 ### 删除表
 
@@ -98,7 +96,7 @@ User.migrate().drop()
 
 返回 0
 
-
+<br><br>
 
 ### 增加一条数据
 
@@ -110,7 +108,7 @@ User.new(name='Tom', age=23).insert()
 
 返回增加的记录的个数
 
-
+<br><br>
 
 ### 删除一条数据
 
@@ -122,7 +120,7 @@ User.where(name='Tom', age=23).delete()
 
 返回删除的记录的个数
 
-
+<br><br>
 
 ### 更新一条记录
 
@@ -134,7 +132,7 @@ User.where(name='Tom', age=23).update(name='Jerry')
 
 返回更新的记录的个数
 
-
+<br><br>
 
 ### 查询记录
 
@@ -160,8 +158,14 @@ User.where(name='Tom', age=23).need('age').select()
   User.where(name='Tom', age=23).need('*').select()
   ```
 
+- 该方法也支持 `模糊查询` 
+
+  ```python
+  User.where(name='To').select(fuzzy=True)
+  ```
 
 
+<br><br>
 
 ### 总之
 
@@ -177,11 +181,14 @@ Object.new(**kwargs).insert() 			     # 插入记录
 Object.where(**kwargs).delete()              # 删除记录
                       .update(**kwargs)      # 更新记录
                       .select()              # 查询记录
+                      .select(fuzzy=True)    # 模糊查询
                       .need(*args).select()  # 查询记录
                       
 ```
 
+你懂我的意思8～
 
+<br><br>
 
 ### 其他
 
@@ -215,11 +222,11 @@ print(res)
 ]
 ```
 
-你懂我的意思吧 ~
+你懂我的意思8 ~
 
 
 
-
+<br><br><br><br>
 
 
 

@@ -9,16 +9,18 @@ class User(Model):
 
 # s = User.migrate().create()
 
-# s = User.new(name='Adam', age=40).insert()
+# s = User.new(name='Tom', age=19).insert()
 
 # s = User.where(age=18, name='Katherine').delete()
 
-# s = User.where(age=40).need('name').select()
+s = User.where(name='覃小').need('name').select(fuzzy=True)
+
+# s = User.where(name='Ally').update(age=23)
 
 # s = User.migrate().count('name')
 
 # s = User.migrate().drop()
 
 
-# print(s)
+print(s)
 

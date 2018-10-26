@@ -49,8 +49,8 @@ class Expr:
         Database.connect(**DB_CONFIG).execute(Sql.drop(self.table).sql)
         return Database.affected
 
-    def select(self):
-        sql = Sql.select(self.table, self.needs, self.params).sql
+    def select(self, fuzzy=False):
+        sql = Sql.select(self.table, self.needs, self.params, fuzzy).sql
         return tuple_to_list(self.needs if self.needs and '*' not in self.needs else (fd[0] for fd in self.fields),
                              Database.connect(**DB_CONFIG).execute(sql).fetchall())
 
@@ -124,7 +124,7 @@ class Database:
                 cls.affected = cursor.execute(sql, args)
                 return cursor
         except Exception as e:
-            return e
+            print(e)
         finally:
             cls.conn.close()
 
