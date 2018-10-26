@@ -14,15 +14,35 @@
 
 需要的 py 库
 
-```
+```bash
 pip3 install pymysql
 ```
 
 或
 
-```
+```bash
 pip3 -r requirement.txt
 ```
+
+
+
+### 数据库配置文件
+
+通过内置脚本键入参数来配置
+
+```bash
+cd your project
+git clone git@github.com:Mivinci/SORM.git
+cd SORM
+
+# 若本地数据库
+python3 start.py user password database
+
+# 若云
+python3 start.py user password database server_url
+```
+
+或更简单粗暴，直接改内置的配置文件 (自己找8～)
 
 
 
@@ -132,7 +152,14 @@ User.where(name='Tom', age=23).select()
 User.where(name='Tom', age=23).need('age').select()
 ```
 
-其中若 `need()` 中输入的参数出现 `'*'` 也可以表示查询整条记录
+- 下面两行的效果相同，都表示查询满足条件的整条记录
+
+  ```python
+  User.where(name='Tom', age=23).select()
+  
+  User.where(name='Tom', age=23).need('*').select()
+  ```
+
 
 
 

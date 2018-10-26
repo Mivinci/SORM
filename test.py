@@ -2,7 +2,6 @@ from dev.sorm import Model, StrField, IntField, TimeField
 
 
 class User(Model):
-    __table__ = 'user_info'
     name = StrField(maxlen=25)
     age = IntField(default=23)
     first_time = TimeField(auto_update=True)
@@ -14,7 +13,7 @@ class User(Model):
 
 # s = User.where(age=18, name='Katherine').delete()
 
-# s = User.where(age=23).need('name').select()
+# s = User.where(age=40).need('name').select()
 
 # s = User.migrate().count('name')
 
