@@ -99,8 +99,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/dev/conf/config.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="102">
-                  <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+                <state>
+                  <caret column="124" lean-forward="true" selection-start-column="124" selection-end-column="124" />
                 </state>
               </provider>
             </entry>
@@ -436,17 +436,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/sql.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="62" column="57" selection-start-line="62" selection-start-column="57" selection-end-line="62" selection-end-column="57" />
-          <folding>
-            <marker date="1540563757648" expanded="true" signature="179:248" ph="..." />
-            <marker date="1540563757648" expanded="true" signature="797:869" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/sorm.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="107">
@@ -477,10 +466,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dev/sql.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="62" column="57" selection-start-line="62" selection-start-column="57" selection-end-line="62" selection-end-column="57" />
+          <folding>
+            <marker date="1540563757648" expanded="true" signature="179:248" ph="..." />
+            <marker date="1540563757648" expanded="true" signature="797:869" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dev/conf/config.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+        <state>
+          <caret column="124" lean-forward="true" selection-start-column="124" selection-end-column="124" />
         </state>
       </provider>
     </entry>

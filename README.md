@@ -42,6 +42,8 @@ python3 start.py user password database
 python3 start.py user password database server_url
 ```
 
+若成功会看到 `You got me!` 字样
+
 或更简单粗暴，直接改内置的配置文件 (自己找8～)
 
 <br><br>
