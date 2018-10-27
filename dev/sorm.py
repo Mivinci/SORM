@@ -1,5 +1,5 @@
-from dev.sql import Sql
-from dev.conf.config import DB_CONFIG
+from .sql import Sql
+from .conf.config import DB_CONFIG
 import pymysql
 
 
