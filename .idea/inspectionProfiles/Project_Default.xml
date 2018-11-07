@@ -11,6 +11,7 @@
           <option value="dev.test.Student.*" />
           <option value="dev.sorm.*" />
           <option value="sql" />
+          <option value="tsorm.dev.orm.Database.cursor" />
         </list>
       </option>
     </inspection_tool>

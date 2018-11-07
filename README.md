@@ -1,8 +1,8 @@
-# SORM
+# TSORM
 
 为 python-Flask 项目提供简单的对象关系映射APIs
 
-## 'S' stands for simple, swift and stupid.
+## 'TS' stands for Simple, Swift and Stupid.
 
 
 
@@ -40,10 +40,12 @@ pip3 -r requirement.txt
 
 通过内置脚本键入参数来配置
 
+##### 该方案已废除
+
 ```bash
 cd your project
-git clone git@github.com:Mivinci/SORM.git
-cd SORM
+git clone git@github.com:Mivinci/tsorm.git
+cd tsorm
 
 # 若本地数据库
 python3 start.py user password database
@@ -52,9 +54,22 @@ python3 start.py user password database
 python3 start.py user password database server_url
 ```
 
+##### 修改为（建议一个项目一个py虚拟环境）
+
+```python
+(venv) python3
+>>> from tsorm.start import add_db_config
+>>> add_db_config('your username', 'your paswword', 'your database', 'your host_url')
+
+```
+
+其中第4个参数若不填，默认为 '127.0.0.1'
+
 若成功会看到 `You got me!` 字样
 
 或更简单粗暴，直接改内置的配置文件 (自己找8～)
+
+> 有更好的方法欢迎 issue
 
 <br><br>
 
@@ -85,6 +100,7 @@ class User(Model):
 ```
 
 - 目前仅支持以上有的自定义初始值
+- 若需设default=0，需要写成default='0'
 
 <br><br>
 
