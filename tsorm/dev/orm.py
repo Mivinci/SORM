@@ -1,5 +1,5 @@
 from .sql import Sql
-from .conf.config import DB_CONFIG
+from tsorm.conf.config import DB_CONFIG
 import pymysql
 
 

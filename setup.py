@@ -6,7 +6,7 @@ with open('README.md', 'r') as f:
 
 setup(
     name='tsorm',
-    version='0.1.0',
+    version='0.1.2',
     author='Leonard Mivinci',
     author_email='1366723936@qq.com',
     description='Provide simple ORM APIs for Python project',

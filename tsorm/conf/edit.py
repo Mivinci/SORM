@@ -1,4 +1,4 @@
-from .dev.conf.config import DB_CONFIG
+from tsorm.conf.config import DB_CONFIG
 import sys
 
 
@@ -9,7 +9,7 @@ def rewrite_db_config(params: list):
     tmp['database'] = params[3]
     tmp['host'] = params[4] if len(params) == 5 else '127.0.0.1'
     try:
-        with open('dev/conf/config.py', 'w') as f:
+        with open('config.py', 'w') as f:
             f.write(f"""DB_CONFIG = {str(tmp)}""")
         print('You got me!')
     except Exception as e:
@@ -24,7 +24,7 @@ def add_db_config(user, password, database, host='127.0.0.1'):
     tmp['database'] = database
     tmp['host'] = host
     try:
-        with open('tsorm/dev/conf/config.py', 'w') as f:
+        with open('config.py', 'w') as f:
             f.write(f"""DB_CONFIG = {str(tmp)}""")
         print('You got me!')
     except Exception as e:

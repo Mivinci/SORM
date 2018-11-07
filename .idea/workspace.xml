@@ -30,7 +30,7 @@
       <usages-collector id="statistics.js.language.service.starts" />
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Markdown" value="4" />
+          <entry key="Markdown" value="5" />
           <entry key="PLAIN_TEXT" value="9" />
           <entry key="Python" value="31" />
         </counts>
@@ -38,23 +38,25 @@
       <usages-collector id="statistics.vcs.git.usages" />
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Python Console" value="924" />
-          <entry key="md" value="74" />
-          <entry key="py" value="14160" />
+          <entry key="Python Console" value="933" />
+          <entry key="dummy" value="7" />
+          <entry key="md" value="84" />
+          <entry key="py" value="14162" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="PKG-INFO" value="3" />
-          <entry key="md" value="4" />
+          <entry key="md" value="5" />
           <entry key="py" value="31" />
           <entry key="txt" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="74" />
-          <entry key="Python" value="15084" />
+          <entry key="Markdown" value="84" />
+          <entry key="PLAIN_TEXT" value="7" />
+          <entry key="Python" value="15095" />
         </counts>
       </usages-collector>
     </session>
@@ -73,8 +75,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../tsorm/setup.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+            <state relative-caret-position="136">
+              <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -83,8 +85,8 @@
         <entry file="file://$PROJECT_DIR$/../tsorm/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="68">
-                <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+              <first_editor relative-caret-position="-528">
+                <caret line="222" column="5" lean-forward="true" selection-start-line="222" selection-start-column="5" selection-end-line="222" selection-end-column="5" />
               </first_editor>
               <second_editor />
             </state>
@@ -92,13 +94,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../tsorm/tsorm/start.py">
+        <entry file="file://$PROJECT_DIR$/../tsorm/tsorm/conf/edit.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
+            <state relative-caret-position="187">
+              <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
-                <marker date="1541600552656" expanded="true" signature="545:897" ph="..." />
+                <marker date="1541602132735" expanded="true" signature="537:874" ph="..." />
               </folding>
             </state>
           </provider>
@@ -125,14 +127,14 @@
               <caret line="140" column="12" selection-start-line="140" selection-start-column="12" selection-end-line="140" selection-end-column="12" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
-                <marker date="1541599965994" expanded="true" signature="188:193" ph="..." />
+                <marker date="1541602021396" expanded="true" signature="193:198" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../tsorm/tsorm/dev/conf/config.py">
+        <entry file="file://$PROJECT_DIR$/../tsorm/tsorm/conf/config.py">
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <caret column="48" selection-start-column="48" selection-end-column="48" />
@@ -176,6 +178,7 @@
         <option value="$PROJECT_DIR$/../tsorm/tsorm/dev/conf/config.py" />
         <option value="$PROJECT_DIR$/../tsorm/tsorm/dev/orm.py" />
         <option value="$PROJECT_DIR$/../tsorm/tsorm/start.py" />
+        <option value="$PROJECT_DIR$/../tsorm/tsorm/conf/start.py" />
         <option value="$PROJECT_DIR$/../tsorm/setup.py" />
         <option value="$PROJECT_DIR$/../tsorm/README.md" />
       </list>
@@ -208,12 +211,13 @@
             <path>
               <item name="tsorm" type="b2602c69:ProjectViewProjectNode" />
               <item name="tsorm" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
+              <item name="tsorm" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tsorm" type="b2602c69:ProjectViewProjectNode" />
               <item name="tsorm" type="462c0819:PsiDirectoryNode" />
-              <item name="tsorm.egg-info" type="462c0819:PsiDirectoryNode" />
+              <item name="tsorm" type="462c0819:PsiDirectoryNode" />
+              <item name="conf" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -233,6 +237,8 @@
       <recent name="$PROJECT_DIR$/dev" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../tsorm/tsorm/conf" />
+      <recent name="$PROJECT_DIR$/../tsorm/tsorm" />
       <recent name="$PROJECT_DIR$/../tsorm" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/dev" />
@@ -621,39 +627,7 @@
     <entry file="file://$PROJECT_DIR$/SORM.egg-info/PKG-INFO" />
     <entry file="file://$PROJECT_DIR$/SORM.egg-info/dependency_links.txt" />
     <entry file="file://$PROJECT_DIR$/TSORM.egg-info/PKG-INFO" />
-    <entry file="file://$PROJECT_DIR$/../tsorm/tsorm/dev/sql.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../tsorm/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../tsorm/tsorm/start.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-            <marker date="1541600552656" expanded="true" signature="545:897" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../tsorm/tsorm/dev/orm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2380">
-          <caret line="140" column="12" selection-start-line="140" selection-start-column="12" selection-end-line="140" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-            <marker date="1541599965994" expanded="true" signature="188:193" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../tsorm/tsorm/dev/conf/config.py">
+    <entry file="file://$PROJECT_DIR$/../tsorm/tsorm/conf/config.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="48" selection-start-column="48" selection-end-column="48" />
@@ -665,18 +639,50 @@
         <state relative-caret-position="-35" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../tsorm/tsorm/dev/sql.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../tsorm/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../tsorm/tsorm/dev/orm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2380">
+          <caret line="140" column="12" selection-start-line="140" selection-start-column="12" selection-end-line="140" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+            <marker date="1541602021396" expanded="true" signature="193:198" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../tsorm/tsorm/conf/edit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+            <marker date="1541602132735" expanded="true" signature="537:874" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../tsorm/setup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+        <state relative-caret-position="136">
+          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../tsorm/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="68">
-            <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+          <first_editor relative-caret-position="-528">
+            <caret line="222" column="5" lean-forward="true" selection-start-line="222" selection-start-column="5" selection-end-line="222" selection-end-column="5" />
           </first_editor>
           <second_editor />
         </state>

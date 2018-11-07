@@ -19,21 +19,6 @@ pip3 install tsorm
 ```
 
 
-
-### 使用前
-
-需要的 py 库
-
-```bash
-pip3 install pymysql
-```
-
-或
-
-```bash
-pip3 -r requirement.txt
-```
-
 <br><br>
 
 ### 数据库配置文件
@@ -58,7 +43,7 @@ python3 start.py user password database server_url
 
 ```python
 (venv) python3
->>> from tsorm.start import add_db_config
+>>> from tsorm.conf.edit import add_db_config
 >>> add_db_config('your username', 'your paswword', 'your database', 'your host_url')
 
 ```
@@ -78,7 +63,7 @@ python3 start.py user password database server_url
 如需创建表名为 `user`，若有字段 `id`, `name`, `age`, `first_time`
 
 ```python
-from dev.sorm import Model, StrField, IntField, TimeField
+from tsorm.dev.orm import Model, StrField, IntField, TimeField
 
 class User(Model):            # 继承该库的 Model 类
     name = StrField()         # 默认值为NULL，默认最大长度255
@@ -225,12 +210,12 @@ Object.where(**kwargs).delete()              # 删除记录
 `tuple_to_list() `  将存放字段名的元组与 pymysql 返回的查询记录的元组组装成字典列表，如
 
 ```python
-from dev.sorm import tuple_to_list
+from tsorm.dev.orm import tuple2list
 
 keys = ('name', 'age')
 data = (('Tom', 23), ('Jerry', 21))
 
-res = tuple_to_list(keys, data)
+res = tuple2list(keys, data)
 
 print(res)
 ```
