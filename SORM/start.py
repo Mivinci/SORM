@@ -1,4 +1,4 @@
-from dev.conf.config import DB_CONFIG
+from .dev.conf.config import DB_CONFIG
 import sys
 
 

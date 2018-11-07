@@ -10,6 +10,16 @@
 
 
 
+
+
+### 安装
+
+```bash
+pip3 install tsorm
+```
+
+
+
 ### 使用前
 
 需要的 py 库

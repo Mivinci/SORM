@@ -1,4 +1,4 @@
-from dev.sorm import Model, StrField, IntField, TimeField
+from .dev.sorm import Model, StrField, IntField, TimeField
 
 
 class User(Model):
