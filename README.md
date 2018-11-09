@@ -23,9 +23,7 @@ pip3 install tsorm
 
 ### 数据库配置文件
 
-通过内置脚本键入参数来配置
-
-##### 该方案已废除
+##### 通过内置脚本键入参数来配置(该项已废除)
 
 ```bash
 cd your project
@@ -39,7 +37,7 @@ python3 start.py user password database
 python3 start.py user password database server_url
 ```
 
-##### 修改为（建议一个项目一个py虚拟环境）
+##### 修改全局数据库配置文件
 
 ```python
 (venv) python3
@@ -53,6 +51,31 @@ python3 start.py user password database server_url
 若成功会看到 `You got me!` 字样
 
 或更简单粗暴，直接改内置的配置文件 (自己找8～)
+
+
+
+##### 自定义数据库配置文件（推荐）
+
+示例：
+
+```python
+# settings.py
+
+DB_CONFIG = {
+    'user': 'root',
+    'password': 'xxxxxx',
+    'host': '127.0.0.1',
+    'port': '3306',
+    'database': 'wx',
+    'charset': 'utf8'
+}
+```
+
+- key 必须和示例中一样！
+- key 必须和示例中一样！
+- key 必须和示例中一样！
+
+
 
 > 有更好的方法欢迎 issue
 
@@ -77,7 +100,10 @@ class User(Model):            # 继承该库的 Model 类
 也可以自定义初始值
 
 ```python
+from settings import DB_CONFIG  # 你的路径
+
 class User(Model):
+    __db__ = DB_CONFIG        # 没这行 默认为全局数据库配置(见上)
     __table__ = 'user_info'   # 没这行 默认的表名为 'user'
     name = StrField(default='xxx', maxlen=25)
     age = IntField(default='xxx', maxlen=11)

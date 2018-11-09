@@ -36,23 +36,25 @@ class Expr:
     def __init__(self, model, **kwargs):
         self.fields = [(key, val.__dict__) for key, val in model.__dict__.items() if isinstance(val, Field)]
         self.table = model.__name__.lower() if not model.__dict__.get('__table__') else model.__dict__.get('__table__')
+        self.db_config = DB_CONFIG if not model.__dict__.get('__db__') else model.__dict__.get('__db__')  # TODO
         self.model = model
         self.params = stringify_dict_values(kwargs)
         self.needs = ()
+        print(model.__dict__)
 
     def create(self):
         sql = Sql.create(self.table, self.fields).sql
-        Database.connect(**DB_CONFIG).execute(sql)
+        Database.connect(**self.db_config).execute(sql)
         return Database.affected
 
     def drop(self):
-        Database.connect(**DB_CONFIG).execute(Sql.drop(self.table).sql)
+        Database.connect(**self.db_config).execute(Sql.drop(self.table).sql)
         return Database.affected
 
     def select(self, fuzzy=False):
         sql = Sql.select(self.table, self.needs, self.params, fuzzy).sql
         return tuple2list(self.needs if self.needs and '*' not in self.needs else (fd[0] for fd in self.fields),
-                          Database.connect(**DB_CONFIG).execute(sql).fetchall())
+                          Database.connect(**self.db_config).execute(sql).fetchall())
 
     def need(self, *args):
         self.needs = args
@@ -60,21 +62,21 @@ class Expr:
 
     def insert(self):
         sql = Sql.insert(self.table, self.params).sql
-        Database.connect(**DB_CONFIG).execute(sql)
+        Database.connect(**self.db_config).execute(sql)
         return Database.affected
 
     def delete(self):
         sql = Sql.delete(self.table, self.params).sql
-        Database.connect(**DB_CONFIG).execute(sql)
+        Database.connect(**self.db_config).execute(sql)
         return Database.affected
 
     def update(self, **kwargs):
         sql = Sql.update(self.table, self.params, kwargs).sql
-        Database.connect(**DB_CONFIG).execute(sql)
+        Database.connect(**self.db_config).execute(sql)
         return Database.affected
 
     def count(self, field):
-        return Database.connect(**DB_CONFIG).execute(Sql.count(self.table, field).sql).fetchone()[0]
+        return Database.connect(**self.db_config).execute(Sql.count(self.table, field).sql).fetchone()[0]
 
 
 class Model:

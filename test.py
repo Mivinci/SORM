@@ -1,7 +1,17 @@
 from tsorm.dev.orm import Model, StrField, IntField, TimeField
 
+db_config = {
+    'user': 'root',
+    'password': 'xxxxxx',
+    'host': '127.0.0.1',
+    'port': '3306',
+    'database': 'wx',
+    'charset': 'utf8'
+}
+
 
 class User(Model):
+    __db__ = db_config
     name = StrField(maxlen=25)
     age = IntField(default=23)
     first_time = TimeField(auto_update=True)
