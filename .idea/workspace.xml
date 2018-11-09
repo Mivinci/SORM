@@ -84,12 +84,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="169" />
+          <entry key="py" value="182" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="169" />
+          <entry key="Python" value="182" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -100,11 +100,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.48677248">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/setup.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="136">
-                  <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+                  <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
                 </state>
               </provider>
             </entry>
@@ -121,11 +121,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/test.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="136">
-                  <caret line="8" column="21" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="8" selection-end-column="21" />
+                <state relative-caret-position="408">
+                  <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
                 </state>
               </provider>
             </entry>
@@ -152,7 +152,7 @@
             <entry file="file://$PROJECT_DIR$/tsorm/conf/config.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state>
-                  <caret column="22" selection-start-column="22" selection-end-column="22" />
+                  <caret column="107" selection-start-column="107" selection-end-column="107" />
                 </state>
               </provider>
             </entry>
@@ -204,18 +204,18 @@
         <option value="$PROJECT_DIR$/SORM/__init__.py" />
         <option value="$PROJECT_DIR$/SORM/start.py" />
         <option value="$PROJECT_DIR$/SORM/test.py" />
-        <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/tsorm/test.py" />
         <option value="$PROJECT_DIR$/tsorm/dev/conf/config.py" />
         <option value="$PROJECT_DIR$/tsorm/start.py" />
         <option value="$PROJECT_DIR$/tsorm/conf/start.py" />
-        <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/tsorm/dev/orm.py" />
+        <option value="$PROJECT_DIR$/tsorm/dev/orm.py" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/tsorm/conf/config.py" />
-        <option value="$PROJECT_DIR$/tsorm/dev/orm.py" />
-        <option value="$PROJECT_DIR$/tsorm/dev/orm.py" />
-        <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/setup.py" />
+        <option value="$PROJECT_DIR$/setup.py" />
       </list>
     </option>
   </component>
@@ -242,6 +242,11 @@
             <path>
               <item name="tsorm" type="b2602c69:ProjectViewProjectNode" />
               <item name="tsorm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tsorm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tsorm" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tsorm" type="b2602c69:ProjectViewProjectNode" />
@@ -419,7 +424,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19098713" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -506,13 +510,6 @@
         <state relative-caret-position="-990" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/setup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tsorm/conf/edit.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -525,13 +522,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tsorm/dev/sql.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tsorm/conf/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="22" selection-start-column="22" selection-end-column="22" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tsorm/dev/orm.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -546,8 +536,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tsorm/conf/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="107" selection-start-column="107" selection-end-column="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" column="21" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="8" selection-end-column="21" />
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
         </state>
       </provider>
     </entry>
