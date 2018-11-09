@@ -40,7 +40,6 @@ class Expr:
         self.model = model
         self.params = stringify_dict_values(kwargs)
         self.needs = ()
-        print(model.__dict__)
 
     def create(self):
         sql = Sql.create(self.table, self.fields).sql
