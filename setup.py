@@ -1,21 +1,22 @@
-from setuptools import setup, find_packages
+import setuptools
 
 
-with open('README.md', 'r') as f:
-    long_desc = f.read()
+with open("README.md", "r") as f:
+    long_description = f.read()
 
-setup(
-    name='tsorm',
-    version='0.2.3',
-    author='Leonard Mivinci',
-    author_email='1366723936@qq.com',
-    description='Provide simple ORM APIs for Python project',
-    long_description=long_desc,
+setuptools.setup(
+    name="mporm",
+    version="1.0.0",
+    author="Leonard Mivinci XJJ",
+    author_email="1366723936@qq.com",
+    description="MySQL ORM in Python",
+    long_description=long_description,
     long_description_content_type="text/markdown",
-    url='https://github.com/Mivinci/tsorm',
-    install_requires=[
-        'PyMySQL==0.9.2',
+    url="https://github.com/mivinci/mporm",
+    packages=setuptools.find_packages(),
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
     ],
-    packages=find_packages(),
-    license='MIT',
 )
