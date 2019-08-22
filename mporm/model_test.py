@@ -24,7 +24,7 @@ def test_model_declare():
 
 # test
 def test_model_new():
-    Hero.add(name="Thor")
+    Hero.where(name="Thor").filter("name", "age")
 
 
 if __name__ == '__main__':

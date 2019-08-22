@@ -9,7 +9,7 @@ class Model:
 
     @classmethod
     def where(cls, **kwargs):
-        pass
+        return Expr(cls, **kwargs).operator()
 
     @classmethod
     def add(cls, **kwargs):
@@ -17,4 +17,12 @@ class Model:
 
     @classmethod
     def new(cls, **kwargs):
+        return Expr(cls, **kwargs)
+
+    @classmethod
+    def first(cls):
+        pass
+
+    @classmethod
+    def last(cls):
         pass

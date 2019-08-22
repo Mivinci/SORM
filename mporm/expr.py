@@ -1,4 +1,5 @@
 from mporm.fields import Field
+from mporm.operator import Operator
 
 
 class Expr:
@@ -13,8 +14,6 @@ class Expr:
 
         self.required: tuple = ()
 
-        print(self.fields)
-
     # Creates new table
     def create(self) -> bool:
         pass
@@ -23,8 +22,9 @@ class Expr:
     def drop(self) -> bool:
         pass
 
-    # Inserts a row to the specified table
+    # Inserts a new row to the specified table
     def insert(self) -> bool:
-        print(self.tb_name)
-        print(self.params)
-        return True
+        pass
+
+    def operator(self):
+        return Operator(self)
