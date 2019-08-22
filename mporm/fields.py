@@ -35,16 +35,19 @@ class TimeField(Field):
 
 
 class BoolField(IntField):
-    def __init__(self, default: bool, not_null=True):
+    def __init__(self,
+                 default: bool = False,
+                 not_null=True):
         super().__init__(size=1,
-                         default=default,
+                         default=1 if default else 0,
                          not_null=not_null)
 
 
 class FloatField(Field):
     def __init__(self,
-                 size: int = 64,
+                 size: int = 32,
                  default: float = None,
                  not_null: bool = False):
         super().__init__(default, not_null)
-        self.type = "double" if size == 64 else 32
+        self.type = "double" if size == 64 else "float"
+        self.size = size

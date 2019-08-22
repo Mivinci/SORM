@@ -9,9 +9,9 @@ class Hero(Model):
     # __dsn__ = DSN(user="root", password="XJJ")
     __prefix__ = "Marvel"
 
-    name = StrField(not_null=True)
+    name = StrField()
     age = IntField()
-    grown_up = BoolField(False)
+    grown_up = BoolField()
     score = FloatField()
 
 
@@ -31,7 +31,7 @@ def test_model_declare():
 def test_model_new():
     dsn = DSN(user="root", password="XJJ@none")
     ORM.load(dsn)
-    Hero.where(name="Thor").filter("name", "age")
+    # Hero.where(name="Thor").filter("name", "age")
     Hero.create()
 
 

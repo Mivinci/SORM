@@ -4,4 +4,3 @@ from mporm.model import Model
 from mporm.expr import Expr
 from mporm.dsn import DSN
 from mporm.fields import *
-

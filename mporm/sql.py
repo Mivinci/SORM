@@ -1,6 +1,6 @@
 from pymysql import Connection, connect, cursors, DatabaseError, DataError
 
-from mporm import DSN
+from mporm.dsn import DSN
 from mporm.orm import ORM
 
 
