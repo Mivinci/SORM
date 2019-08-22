@@ -13,11 +13,19 @@ class Model:
 
     @classmethod
     def add(cls, **kwargs):
-        return Expr(cls, **kwargs).insert()
+        return Expr(cls, **kwargs).operator().insert()
 
     @classmethod
     def new(cls, **kwargs):
         return Expr(cls, **kwargs)
+
+    @classmethod
+    def drop(cls):
+        return Expr(cls).operator().drop()
+
+    @classmethod
+    def create(cls):
+        return Expr(cls).operator().create()
 
     @classmethod
     def first(cls):

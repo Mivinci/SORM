@@ -1,3 +1,6 @@
+# You can't import `mporm.schema` in this file!!
+
+
 class Operator:
     def __init__(self, expr):
         self._expr = expr
@@ -6,6 +9,19 @@ class Operator:
         self._order_desc = False
         self._offset = None
         self._limit = None
+
+    # Creates a new table
+    def create(self) -> bool:
+        pass
+
+    # Drops a specified table
+    def drop(self) -> bool:
+        pass
+
+    # The 4 Functions below are what we call 'CRUD'
+
+    def insert(self) -> bool:
+        pass
 
     def delete(self) -> bool:
         pass
@@ -16,6 +32,8 @@ class Operator:
     def find(self) -> int:
         print(self._require_fields)
         return 1
+
+    # Functions below return `self` since they're used to build chains
 
     def filter(self, *args) -> int:
         return self.require(*args).find()
