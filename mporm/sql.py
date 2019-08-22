@@ -61,7 +61,7 @@ class SingleSQL:
                 cursor.execute(sql, args)
                 return cursor
         except DataError as err:
-            print(err)
+             print(err)
         finally:
             pass
 

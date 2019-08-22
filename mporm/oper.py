@@ -20,7 +20,7 @@ class Operator:
 
     # Drops a specified table
     def drop(self) -> bool:
-        pass
+        return Executor(self.expr, self).drop()
 
     # The 4 Functions below are what we call 'CRUD'
 

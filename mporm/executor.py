@@ -9,11 +9,10 @@ class Executor:
         self.schema = Schema(expr, oper)
 
     def create(self):
-        sql = self.schema.create()
         if not self.expr.dsn:
-            try:
-                SingleSQL.execute(sql)
-            except Exception as err:
-                print(err)
+            SingleSQL.execute(self.schema.create())
         else:
             pass
+
+    def drop(self):
+        SingleSQL.execute(self.schema.drop())

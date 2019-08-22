@@ -32,7 +32,8 @@ def test_model_new():
     dsn = DSN(user="root", password="XJJ@none")
     ORM.load(dsn)
     # Hero.where(name="Thor").filter("name", "age")
-    Hero.create()
+    Hero.drop()
+    # Hero.create()
 
 
 if __name__ == '__main__':
