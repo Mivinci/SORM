@@ -14,13 +14,15 @@ class Operator:
         self.offset = None
         self.limit = None
 
+        self.executor = Executor(expr, self)
+
     # Creates a new table
     def create(self) -> bool:
-        return Executor(self.expr, self).create()
+        return self.executor.create()
 
     # Drops a specified table
     def drop(self) -> bool:
-        return Executor(self.expr, self).drop()
+        return self.executor.drop()
 
     # The 4 Functions below are what we call 'CRUD'
 

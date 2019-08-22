@@ -1,4 +1,4 @@
-from pymysql import Connection, connect, cursors, DatabaseError, DataError
+from pymysql import Connection, connect, cursors, DatabaseError
 
 from mporm.dsn import DSN
 from mporm.orm import ORM
@@ -22,7 +22,7 @@ class SQL:
             with self.open().cursor() as cursor:
                 cursor.execute(sql, args)
                 return cursor
-        except DataError as err:
+        except Exception as err:
             print(err)
         finally:
             pass
@@ -60,8 +60,8 @@ class SingleSQL:
             with cls.open(ORM.dsn).cursor() as cursor:
                 cursor.execute(sql, args)
                 return cursor
-        except DataError as err:
-             print(err)
+        except Exception as err:
+            print(err)
         finally:
             pass
 

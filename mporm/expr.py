@@ -25,5 +25,4 @@ class Expr:
         self.fields.append(("created_at", model.created_at.__dict__))
         self.fields.append(("updated_at", model.updated_at.__dict__))
 
-    def operator(self):
-        return Operator(self)
+        self.operator = Operator(self)

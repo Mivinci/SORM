@@ -10,11 +10,11 @@ class Model:
 
     @classmethod
     def where(cls, **kwargs):
-        return Expr(cls, **kwargs).operator()
+        return Expr(cls, **kwargs).operator
 
     @classmethod
     def add(cls, **kwargs):
-        return Expr(cls, **kwargs).operator().insert()
+        return Expr(cls, **kwargs).operator.insert()
 
     @classmethod
     def new(cls, **kwargs):
@@ -22,11 +22,11 @@ class Model:
 
     @classmethod
     def drop(cls):
-        return Expr(cls).operator().drop()
+        return Expr(cls).operator.drop()
 
     @classmethod
     def create(cls):
-        return Expr(cls).operator().create()
+        return Expr(cls).operator.create()
 
     @classmethod
     def first(cls):
