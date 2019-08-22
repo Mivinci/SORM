@@ -17,11 +17,12 @@ class SQL:
                 self.dsn.host, self.dsn.port, self.dsn.database, self.dsn.charset)
         return self.connection
 
-    def execute(self, sql: str, args: dict or tuple = None):
+    def execute(self, sql: str, args: tuple = None):
         try:
             with self.open().cursor() as cursor:
                 cursor.execute(sql, args)
-                return cursor
+            self.connection.commit()
+            return cursor
         except Exception as err:
             print(err)
         finally:
@@ -55,7 +56,7 @@ class SingleSQL:
             print(err)
 
     @classmethod
-    def execute(cls, sql: str, args: dict or tuple = None) -> object:
+    def execute(cls, sql: str, args: tuple = None):
         try:
             with cls.open(ORM.dsn).cursor() as cursor:
                 cursor.execute(sql, args)
