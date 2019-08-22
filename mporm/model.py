@@ -4,7 +4,7 @@ from mporm.expr import Expr
 
 class Model:
 
-    id = StrField(capacity=32, not_null=True)
+    id = StrField(capacity=32, default="replace(uuid(), '-', '')", not_null=True)
     created_at = TimeField(default="NOW()", not_null=True)
     updated_at = TimeField(default=None, auto_update=True)
 

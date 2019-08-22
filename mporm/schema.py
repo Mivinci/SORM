@@ -4,9 +4,6 @@ from mporm.convert import Convert, iDESC, iNAME
 from typing import Callable
 
 
-tb_drop: Callable[[str], str] = lambda tb_name: f"drop table {tb_name};"
-
-
 _iNAME = iNAME
 _iDESC = iDESC
 _key_t = "type"
@@ -35,6 +32,14 @@ tb_create: Callable[[str, list], str] = lambda tb_name, tb_fields: \
     f") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;"
 
 
+tb_drop: Callable[[str], str] = lambda tb_name: f"drop table {tb_name};"
+
+
+def tb_insert(tb_name: str, params: dict) -> str:
+    return f"insert into {tb_name} ({', '.join(params.keys())}) values" \
+           f" ({', '.join(['%s' for i in range(params.__len__())])});"
+
+
 class Schema:
     def __init__(self, expr, operator=None):
         self._expr = expr
@@ -45,3 +50,15 @@ class Schema:
 
     def drop(self) -> str:
         return tb_drop(self._expr.tb_name)
+
+    def insert(self) -> str:
+        return tb_insert(self._expr.tb_name, self._expr.params)
+
+    def delete(self) -> str:
+        pass
+
+    def update(self) -> str:
+        pass
+
+    def select(self) -> str:
+        pass

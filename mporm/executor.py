@@ -12,10 +12,33 @@ class Executor:
             self.sql = SQL(expr.dsn)
 
     def create(self):
+        sql: str = self.schema.create()
         if not self.expr.dsn:
-            SingleSQL.execute(self.schema.create())
+            # print(sql)
+            SingleSQL.execute(sql)
         else:
-            pass
+            self.sql.execute(sql)
 
     def drop(self):
-        SingleSQL.execute(self.schema.drop())
+        sql: str = self.schema.drop()
+        if not self.expr.dsn:
+            SingleSQL.execute(sql)
+        else:
+            self.sql.execute(sql)
+
+    def insert(self):
+        sql:   str = self.schema.insert()
+        value: tuple = tuple(self.expr.params.values())
+        if not self.expr.dsn:
+            SingleSQL.execute(sql, value)
+        else:
+            self.sql.execute(sql, value)
+
+    def delete(self):
+        pass
+
+    def update(self):
+        pass
+
+    def select(self):
+        pass
