@@ -1,6 +1,6 @@
 from typing import Callable
 
-from mporm.operator import Operator
+from mporm.oper import Operator
 from mporm.expr import Expr
 
 tb_drop: Callable[[str], str] = lambda tb_name: f"drop table {tb_name};"

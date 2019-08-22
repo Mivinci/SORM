@@ -1,5 +1,5 @@
 from mporm.fields import Field
-from mporm.operator import Operator
+from mporm.oper import Operator
 
 
 # You can't import `mporm.schema` in this file!!

@@ -1,20 +1,19 @@
-from mporm.operator import Operator
+from mporm.oper import Operator
 from mporm.schema import Schema
 from mporm.model import Model
 from mporm.expr import Expr
 from mporm.fields import *
 
-from typing import TypedDict
 
+class DSN:
 
-class DSN(TypedDict):
-    def __init__(self):
-        pass
-
-    user: str
-    password: str
-    host: str
-    port: int
-    database: str
-    charset: str
-
+    def __init__(self,
+                 user,
+                 password,
+                 database="test", host="localhost", port: int = 3306, charset="utf8"):
+        self.user = user
+        self.password = password
+        self.host = host
+        self.port = port
+        self.database = database
+        self.charset = charset
