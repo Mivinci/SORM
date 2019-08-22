@@ -1,8 +1,12 @@
-from mporm import DSN
+from mporm.dsn import DSN
+
+"""
+    orm = ORM.load(DSN(user="", password="", ...))
+"""
 
 
 class ORM:
-    dsn: DSN
+    dsn: DSN = None
 
     @classmethod
     def load(cls, dsn: DSN):

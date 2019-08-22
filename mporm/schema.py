@@ -13,7 +13,6 @@ class Schema:
     def __init__(self, expr, operator=None):
         self._expr: Expr = expr
         self._oper: Operator = operator
-        print(self._expr.fields)
 
     def create(self) -> str:
         pass

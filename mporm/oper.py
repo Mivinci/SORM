@@ -2,6 +2,7 @@
 
 
 class Operator:
+
     def __init__(self, expr):
         self._expr = expr
         self._require_fields = ()
@@ -12,7 +13,8 @@ class Operator:
 
     # Creates a new table
     def create(self) -> bool:
-        pass
+        print(self._expr.dsn)
+        return True
 
     # Drops a specified table
     def drop(self) -> bool:

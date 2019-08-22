@@ -1,9 +1,10 @@
-from mporm.fields import TimeField
+from mporm.fields import TimeField, StrField
 from mporm.expr import Expr
 
 
 class Model:
 
+    id = StrField(capacity=32, not_null=True)
     created_at = TimeField(default="NOW()", not_null=True)
     updated_at = TimeField(default=None, auto_update=True)
 

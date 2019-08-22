@@ -1,6 +1,6 @@
 import unittest
 
-from mporm import DSN
+from mporm.dsn import DSN
 from mporm.sql import SingleSQL, SQL
 
 
@@ -10,7 +10,6 @@ class MyTestCase(unittest.TestCase):
         conn1 = SingleSQL.open(dsn)
         conn2 = SingleSQL.open(dsn)
         SingleSQL.close()
-        print(conn1)
         self.assertEqual(conn1 == conn2, True)
 
     def test_SQL_new(self):
@@ -20,6 +19,12 @@ class MyTestCase(unittest.TestCase):
         conn1.close()
         conn2.close()
         self.assertEqual(conn1 == conn2, False)
+
+    def test_SQL_execute(self):
+        dsn = DSN(user="root", password="XJJ@none")
+        with SQL(dsn).open().cursor() as cursor:
+            cursor.execute("show tables")
+        self.assertEqual(not cursor.fetchall(), False)
 
 
 if __name__ == '__main__':
