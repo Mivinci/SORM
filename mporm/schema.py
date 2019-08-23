@@ -35,6 +35,10 @@ def spread_new_values(values: dict):
         yield f"{k} = %s"
 
 
+def consist_where_expression():
+    pass
+
+
 def consist_order_expression(order_field: str, order_desc: bool) -> str:
     return f"""{f"order by {order_field} {'desc' if order_desc else 'asc'}" if order_field else ""}"""
 

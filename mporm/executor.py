@@ -14,6 +14,9 @@ class Executor:
         if expr.dsn:
             self.sql = SQL(expr.dsn)
 
+    def close(self) -> None:
+        self.sql.close()
+
     def create(self) -> int:
         sql: str = self.schema.create()
         return Affect.execute(sql, self)
@@ -23,7 +26,7 @@ class Executor:
         return Affect.execute(sql, self)
 
     def insert(self) -> int:
-        sql:   str = self.schema.insert()
+        sql: str = self.schema.insert()
         return Affect.execute(sql, self, self.where_expression_values)
 
     def delete(self) -> int:

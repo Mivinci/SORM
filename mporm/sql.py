@@ -1,8 +1,8 @@
+import toml
 from pymysql import Connection, connect, cursors, DatabaseError
 from pymysql.cursors import Cursor
 
 from mporm.dsn import DSN
-from mporm.orm import ORM
 
 
 class SQL:
@@ -75,3 +75,25 @@ class SingleSQL:
     @classmethod
     def close(cls):
         cls.connection.close()
+
+
+class ORM:
+    dsn: DSN = None
+
+    @classmethod
+    def load(cls, dsn: DSN):
+        cls.dsn = dsn
+
+    @classmethod
+    def load_file(cls, filename: str, key: str = "database"):
+        d: dict = toml.load(filename).get(key)
+        cls.dsn = DSN(user=d.get("user"),
+                      password=d.get("password"),
+                      host=d.get("host"),
+                      port=d.get("port"),
+                      database=d.get("database"),
+                      charset=d.get("charset"))
+
+    @classmethod
+    def close(cls):
+        SingleSQL.close()

@@ -1,13 +1,12 @@
 import unittest
 
 from mporm.dsn import DSN
-from mporm.orm import ORM
+from mporm.sql import ORM
 from mporm.fields import StrField, IntField, BoolField, FloatField, Field
 from mporm.model import Model
 
 
 class Hero(Model):
-    # __dsn__ = DSN(user="root", password="XJJ@none")
     __prefix__ = "Marvel"
 
     name = StrField()
@@ -18,32 +17,27 @@ class Hero(Model):
 
 class MyTestCase(unittest.TestCase):
     def test_model_create(self):
-        dsn = DSN(user="root", password="XJJ@none")
-        ORM.load(dsn)
+        ORM.load_file("db.toml")
         Hero.drop()
         self.assertEqual(Hero.create() is not None, True)
 
     def test_model_insert(self):
-        dsn = DSN(user="root", password="XJJ@none")
-        ORM.load(dsn)
+        ORM.load_file("db.toml")
         self.assertEqual(Hero.add(name="Thor", age=1000, grown_up=True, score=6.28) is not None, True)
 
     def test_model_delete(self):
-        dsn = DSN(user="root", password="XJJ@none")
-        ORM.load(dsn)
+        ORM.load_file("db.toml")
         print(Hero.where(name="Thor", age=1000).delete())
         self.assertEqual("" is not None, True)
 
     def test_model_update(self):
-        dsn = DSN(user="root", password="XJJ@none")
-        ORM.load(dsn)
+        ORM.load_file("db.toml")
         print(Hero.where(name="Thor").set(name="Peter Parker", age=18).update())
         self.assertEqual("" is not None, True)
 
     def test_model_find(self):
-        dsn = DSN(user="root", password="XJJ@none")
-        ORM.load(dsn)
-        # print(Hero.where(name="Natasha").find())
+        ORM.load_file("db.toml")
+        print(Hero.where(name="Natasha").find())
         # print(Hero.take(2))
         self.assertEqual("" is not None, True)
 

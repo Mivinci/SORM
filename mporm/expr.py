@@ -2,8 +2,6 @@ from mporm.dsn import DSN
 from mporm.fields import Field
 from mporm.oper import Operator
 
-from mporm.orm import ORM
-
 
 # You can't import `mporm.schema` in this file!!
 
