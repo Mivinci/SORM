@@ -1,4 +1,4 @@
-from mporm import ORM, DSN, Model, StrField, IntField, BoolField, FloatField
+from mporm import ORM, Model, StrField, IntField, BoolField, FloatField
 
 
 ORM.load_file("db.toml")
