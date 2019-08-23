@@ -5,7 +5,7 @@
 |_| |_| |_|_|    \___/|_|   |_| |_| |_|
 ```
 
-**mporm** is an ORM tool for MySQL written in Python.
+**mporm** is an ORM tool for MySQL written in Python. [简体中文](https://github.com/Mivinci/mporm/blob/master/README_zh.md)
 
 <br/>
 
@@ -17,13 +17,13 @@
 pip3 install mporm
 ```
 
-### Features
+### Overview
+
+#### Features
 
 - gorm-like API
 - Automatically set `uuid` as default id
 - Automatically set `created_at` and `updated_at`
-
-### Overview
 
 #### Quick Start
 
