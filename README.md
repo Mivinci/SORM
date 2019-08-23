@@ -5,7 +5,7 @@
 |_| |_| |_|_|    \___/|_|   |_| |_| |_|
 ```
 
-![](https://img.shields.io/badge/Python-3%2B-yellowgreen)![](https://img.shields.io/badge/MySQL-5.5%2B-yellowgreen)![](https://img.shields.io/badge/build-passing-brightgreen)![](https://img.shields.io/badge/license-MIT-blue)
+![](https://img.shields.io/badge/Python-3%2B-yellowgreen) ![](https://img.shields.io/badge/MySQL-5.5%2B-yellowgreen) ![](https://img.shields.io/badge/build-passing-brightgreen) ![](https://img.shields.io/badge/license-MIT-blue)
 
 **mporm** is an ORM tool written in Python with only the fundamental CRUD API for MySQL(5.5+) [简体中文](https://github.com/Mivinci/mporm/blob/master/README_zh.md)
 
