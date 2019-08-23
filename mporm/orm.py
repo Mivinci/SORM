@@ -1,3 +1,7 @@
+from typing import Union
+
+from pymysql.cursors import Cursor
+
 from mporm.dsn import DSN
 
 """

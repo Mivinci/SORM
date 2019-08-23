@@ -3,11 +3,10 @@ from mporm.executor import Executor
 
 # You can't import `mporm.schema` in this file!!
 
+default_count_field = "id"
+
 
 class Operator:
-
-    # limit_value: int
-    # offset_value: int
 
     def __init__(self, expr):
         self.expr = expr
@@ -46,7 +45,7 @@ class Operator:
     def findone(self) -> dict:
         return Executor(self.expr, self).select_one()
 
-    def count(self, field: str = "id") -> int:
+    def count(self, field: str = default_count_field) -> int:
         return self.executor.count(field)
 
     # Functions below return `self` since they're used to build chains
