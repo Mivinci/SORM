@@ -6,5 +6,5 @@ from mporm.dsn import DSN
 from mporm.sql import ORM
 from mporm.fields import *
 
-__version__ = "1.0.0"
+__version__ = "0.0.2"
 
