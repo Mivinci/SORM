@@ -1,8 +1,9 @@
+import unittest
+
 from mporm.dsn import DSN
-from mporm.fields import StrField, IntField, BoolField, FloatField, Field
-from mporm.model import Model
-# from freetest import test, T
 from mporm.orm import ORM
+from mporm.fields import StrField, IntField, BoolField, FloatField
+from mporm.model import Model
 
 
 class Hero(Model):
@@ -15,37 +16,36 @@ class Hero(Model):
     score = FloatField()
 
 
-# @test
-def test_model_declare():
+class MyTestCase(unittest.TestCase):
+    def test_model_create(self):
+        dsn = DSN(user="root", password="XJJ@none")
+        ORM.load(dsn)
+        Hero.drop()
+        self.assertEqual(Hero.create() is not None, True)
 
-    print("id", Hero.id.__dict__)
-    print("created_at", Hero.created_at.__dict__)
-    print("updated_at", Hero.updated_at.__dict__)
+    def test_model_insert(self):
+        dsn = DSN(user="root", password="XJJ@none")
+        ORM.load(dsn)
+        self.assertEqual(Hero.add(name="Thor", age=1000, grown_up=True, score=6.28) is not None, True)
 
-    for key, value in Hero.__dict__.items():
-        if isinstance(value, Field):
-            print(key, value.__dict__)
+    def test_model_delete(self):
+        dsn = DSN(user="root", password="XJJ@none")
+        ORM.load(dsn)
+        print(Hero.where(name="Thor", age=1000).delete())
+        self.assertEqual("" is not None, True)
+
+    def test_model_update(self):
+        dsn = DSN(user="root", password="XJJ@none")
+        ORM.load(dsn)
+        print(Hero.where(name="Thor", age=1000).set(age=2000, score=12.56).update())
+        self.assertEqual("" is not None, True)
+
+    def test_model_select(self):
+        dsn = DSN(user="root", password="XJJ@none")
+        ORM.load(dsn)
+        print(Hero.where(name="Natasha").filter("name"))
+        self.assertEqual("" is not None, True)
 
 
-# @test
-def test_model_new():
-    dsn = DSN(user="root", password="XJJ@none")
-    ORM.load(dsn)
-    # Hero.where(name="Thor").filter("name", "age")
-    Hero.drop()
-    Hero.create()
-
-
-# @test
-def test_model_insert():
-    dsn = DSN(user="root", password="XJJ@none")
-    ORM.load(dsn)
-    Hero.add(name="Natasha", age=28, grown_up=True, score=6.28)
-
-
-if __name__ == '__main__':
-    # test_all()
-    # test_model_declare()
-    # test_model_new()
-    test_model_insert()
-
+# if __name__ == '__main__':
+#     unittest.main()

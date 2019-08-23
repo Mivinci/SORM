@@ -7,6 +7,7 @@ from mporm.orm import ORM
 class SQL:
     def __init__(self, dsn: DSN):
         self.dsn: DSN = dsn
+        self.affected = 0
         self.connection: Connection = None
 
     def open(self) -> Connection:
@@ -20,11 +21,12 @@ class SQL:
     def execute(self, sql: str, args: tuple = None):
         try:
             with self.open().cursor() as cursor:
-                cursor.execute(sql, args)
+                self.affected = cursor.execute(sql, args)
             self.connection.commit()
             return cursor
         except Exception as err:
             print(err)
+            return None
         finally:
             pass
 
@@ -34,6 +36,7 @@ class SQL:
 
 class SingleSQL:
     connection: Connection = None
+    affected = 0
 
     @classmethod
     def open(cls, dsn: DSN) -> Connection:
@@ -59,11 +62,12 @@ class SingleSQL:
     def execute(cls, sql: str, args: tuple = None):
         try:
             with cls.open(ORM.dsn).cursor() as cursor:
-                cursor.execute(sql, args)
+                cls.affected = cursor.execute(sql, args)
             cls.connection.commit()
             return cursor
         except Exception as err:
             print(err)
+            return None
         finally:
             pass
 

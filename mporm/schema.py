@@ -3,7 +3,6 @@ from mporm.convert import Convert, iDESC, iNAME
 
 from typing import Callable
 
-
 _iNAME = iNAME
 _iDESC = iDESC
 _key_t = "type"
@@ -26,18 +25,56 @@ def spread_tb_fields(fields: list):
             yield ""
 
 
+def spread_where_expression(expression: dict):
+    for k, _ in expression.items():
+        yield f"{k} = %s"
+
+
+def spread_new_values(values: dict):
+    for k, _ in values.items():
+        yield f"{k} = %s"
+
+
+def consist_order_expression(order_field: str, order_desc: bool) -> str:
+    return f"""{f"order by {order_field} {'desc' if order_desc else 'asc'}" if order_field else ""}"""
+
+
+consist_offset_expression: Callable[[int], str] = lambda offset: \
+    f"""{f"offset {offset}" if isinstance(offset, int) else ""}"""
+
+consist_limit_expression: Callable[[int], str] = lambda limit: \
+    f"""{f"limit {limit}" if isinstance(limit, int) else ""}"""
+
+
+# The ugly functions below are used to construct sql statement
+
+
 tb_create: Callable[[str, list], str] = lambda tb_name, tb_fields: \
     f"create table if not exists `{tb_name}` (" \
     f"{', '.join(spread_tb_fields(tb_fields))}" \
     f") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;"
 
-
 tb_drop: Callable[[str], str] = lambda tb_name: f"drop table {tb_name};"
 
+row_insert: Callable[[str, dict], str] = lambda tb_name, params: \
+    f"insert into {tb_name} ({', '.join(params.keys())}) values" \
+    f" ({', '.join(['%s' for _ in range(params.__len__())])});"
 
-def tb_insert(tb_name: str, params: dict) -> str:
-    return f"insert into {tb_name} ({', '.join(params.keys())}) values" \
-           f" ({', '.join(['%s' for i in range(params.__len__())])});"
+row_delete: Callable[[str, dict], str] = lambda tb_name, where_expression: \
+    f"delete from {tb_name} where {' and '.join(spread_where_expression(where_expression))};"
+
+row_update: Callable[[str, dict, dict], str] = lambda tb_name, where_expression, new_values: \
+    f"update {tb_name} set" \
+    f" {', '.join(spread_new_values(new_values))} where" \
+    f" {' and '.join(spread_where_expression(where_expression))};"
+
+row_select: Callable[[str, dict, tuple, str, bool, int, int], str] = lambda \
+    tb_name, where_expression, require_fields, order_field, order_desc, offset, limit: \
+    f"select {', '.join(require_fields) or '*'} from {tb_name} where" \
+    f" {' and '.join(spread_where_expression(where_expression))}" \
+    f" {consist_order_expression(order_field, order_desc)}" \
+    f" {consist_limit_expression(limit)}" \
+    f" {consist_offset_expression(offset)};"
 
 
 class Schema:
@@ -52,13 +89,18 @@ class Schema:
         return tb_drop(self._expr.tb_name)
 
     def insert(self) -> str:
-        return tb_insert(self._expr.tb_name, self._expr.params)
+        return row_insert(self._expr.tb_name, self._expr.params)
 
     def delete(self) -> str:
-        pass
+        return row_delete(self._expr.tb_name, self._expr.params)
 
     def update(self) -> str:
-        pass
+        return row_update(self._expr.tb_name, self._expr.params, self._oper.update_values)
 
     def select(self) -> str:
-        pass
+        return row_select(self._expr.tb_name,
+                          self._expr.params,
+                          self._oper.require_fields,
+                          self._oper.order_field, self._oper.order_desc,
+                          self._oper.offset,
+                          self._oper.limit)

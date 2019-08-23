@@ -6,55 +6,57 @@ from mporm.executor import Executor
 
 class Operator:
 
+    limit: int
+    offset: int
+
     def __init__(self, expr):
         self.expr = expr
 
         self.order_field = None
         self.order_desc = False
-        self.offset = None
-        self.limit = None
+        self.offset: object
+        self.limit: object
         self.require_fields = ()
         self.update_values = {}
 
         self.executor = Executor(expr, self)
 
     # Creates a new table
-    def create(self) -> bool:
+    def create(self):
         return self.executor.create()
 
     # Drops a specified table
-    def drop(self) -> bool:
+    def drop(self):
         return self.executor.drop()
 
     # The 4 Functions below are what we call 'CRUD'
 
-    def insert(self) -> bool:
+    def insert(self):
         return self.executor.insert()
 
-    def delete(self) -> bool:
+    def delete(self) -> int:
         return self.executor.delete()
 
-    def update(self) -> bool:
+    def update(self) -> int:
         return Executor(self.expr, self).update()
 
-    def find(self) -> int:
+    def find(self):
         return Executor(self.expr, self).select()
 
     # Functions below return `self` since they're used to build chains
 
-    def filter(self, *args) -> int:
-        return self.require(*args).find()
+    def filter(self, *args):
+        return self.select(*args).find()
 
-    # Followed by `self.find`.
-    def require(self, *args):
+    def select(self, *args):
         self.require_fields = args
         return self
 
     """
-    Can't be followed by method
+    Can be followed by method
         `self.update`.
     """
-    def values(self, **kwargs):
+    def set(self, **kwargs):
         self.update_values = kwargs
         return self
 
