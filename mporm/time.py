@@ -1,9 +1,7 @@
 from time import localtime, struct_time
-from typing import Union
+from typing import Union, Callable
 
-
-def fill_zero(n: int) -> str or int:
-    return n if n > 9 else f"0{n}"
+fill_zero: Callable[[int], Union[str, int]] = lambda n: n if n > 9 else f"0{n}"
 
 
 def stringify(lt: Union[struct_time, struct_time]) -> str:
@@ -15,6 +13,4 @@ def stringify(lt: Union[struct_time, struct_time]) -> str:
            f":{fill_zero(lt.tm_sec)}"
 
 
-def now() -> str:
-    lt = localtime()
-    return stringify(lt)
+now: Callable[[], str] = lambda: stringify(localtime())

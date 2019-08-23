@@ -40,7 +40,7 @@ class Operator:
     def update(self) -> int:
         return Executor(self.expr, self).update()
 
-    def find(self):
+    def find(self) -> list:
         return Executor(self.expr, self).select()
 
     # Functions below return `self` since they're used to build chains

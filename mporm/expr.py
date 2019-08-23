@@ -13,7 +13,7 @@ __prefix__ = "__prefix__"
 
 class Expr:
     def __init__(self, model, **kwargs):
-        self.params:   dict = kwargs
+        self.params: dict = kwargs
         self.reflect:  dict = model.__dict__
         self.md_name:   str = model.__name__.lower()
         self.dsn:       DSN = self.reflect.get(__dsn__)

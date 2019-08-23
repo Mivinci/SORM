@@ -45,7 +45,6 @@ consist_offset_expression: Callable[[int], str] = lambda offset: \
 consist_limit_expression: Callable[[int], str] = lambda limit: \
     f"""{f"limit {limit}" if isinstance(limit, int) else ""}"""
 
-
 # The ugly functions below are used to construct sql statement
 
 
@@ -63,18 +62,24 @@ row_insert: Callable[[str, dict], str] = lambda tb_name, params: \
 row_delete: Callable[[str, dict], str] = lambda tb_name, where_expression: \
     f"delete from {tb_name} where {' and '.join(spread_where_expression(where_expression))};"
 
-row_update: Callable[[str, dict, dict], str] = lambda tb_name, where_expression, new_values: \
-    f"update {tb_name} set" \
-    f" {', '.join(spread_new_values(new_values))} where" \
-    f" {' and '.join(spread_where_expression(where_expression))};"
 
-row_select: Callable[[str, dict, tuple, str, bool, int, int], str] = lambda \
-    tb_name, where_expression, require_fields, order_field, order_desc, offset, limit: \
-    f"select {', '.join(require_fields) or '*'} from {tb_name} where" \
-    f" {' and '.join(spread_where_expression(where_expression))}" \
-    f" {consist_order_expression(order_field, order_desc)}" \
-    f" {consist_limit_expression(limit)}" \
-    f" {consist_offset_expression(offset)};"
+def row_update(tb_name: str, where_expression: dict, new_values: dict) -> str:
+    return f"update {tb_name} set" \
+           f" {', '.join(spread_new_values(new_values))} where" \
+           f" {' and '.join(spread_where_expression(where_expression))};"
+
+
+def row_select(tb_name: str,
+               where_expression: dict,
+               require_fields: tuple,
+               order_field: str, order_desc: bool,
+               offset: int,
+               limit: int) -> str:
+    return f"select {', '.join(require_fields) or '*'} from {tb_name} where" \
+           f" {' and '.join(spread_where_expression(where_expression))}" \
+           f" {consist_order_expression(order_field, order_desc)}" \
+           f" {consist_limit_expression(limit)}" \
+           f" {consist_offset_expression(offset)};"
 
 
 class Schema:

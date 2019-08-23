@@ -37,15 +37,27 @@ class MyTestCase(unittest.TestCase):
     def test_model_update(self):
         dsn = DSN(user="root", password="XJJ@none")
         ORM.load(dsn)
-        print(Hero.where(name="Thor", age=1000).set(age=2000, score=12.56).update())
+        print(Hero.where(name="Thor").set(name="Peter Parker", age=18).update())
         self.assertEqual("" is not None, True)
 
-    def test_model_select(self):
+    def test_model_find(self):
         dsn = DSN(user="root", password="XJJ@none")
         ORM.load(dsn)
-        print(Hero.where(name="Natasha").filter("name"))
+        print(Hero.where(name="Natasha").limit(1).offset(2).filter("name"))
         self.assertEqual("" is not None, True)
 
 
 # if __name__ == '__main__':
 #     unittest.main()
+
+
+# @test
+def test_model_declare():
+
+    print("id", Hero.id.__dict__)
+    print("created_at", Hero.created_at.__dict__)
+    print("updated_at", Hero.updated_at.__dict__)
+
+    for key, value in Hero.__dict__.items():
+        if isinstance(value, Field):
+            print(key, value.__dict__)

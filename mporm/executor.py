@@ -54,13 +54,14 @@ class Executor:
     def update(self) -> int:
         sql: str = self.schema.update()
         if not self.expr.dsn:
+            print(sql)
             SingleSQL.execute(sql, self.update_params_values + self.where_expression_values)
             return SingleSQL.affected
         else:
             self.sql.execute(sql, self.update_params_values + self.where_expression_values)
             return self.sql.affected
 
-    def select(self):
+    def select(self) -> list:
         sql: str = self.schema.select()
         if not self.expr.dsn:
             return SingleSQL.execute(sql, self.where_expression_values).fetchall()
