@@ -75,7 +75,8 @@ def row_select(tb_name: str,
                order_field: str, order_desc: bool,
                offset: int,
                limit: int) -> str:
-    return f"select {', '.join(require_fields) or '*'} from {tb_name} where" \
+    return f"select {', '.join(require_fields) or '*'} from {tb_name}" \
+           f" {'' if not where_expression else 'where'}" \
            f" {' and '.join(spread_where_expression(where_expression))}" \
            f" {consist_order_expression(order_field, order_desc)}" \
            f" {consist_limit_expression(limit)}" \
@@ -107,5 +108,5 @@ class Schema:
                           self._expr.params,
                           self._oper.require_fields,
                           self._oper.order_field, self._oper.order_desc,
-                          self._oper.offset,
-                          self._oper.limit)
+                          self._oper.offset_value,
+                          self._oper.limit_value)

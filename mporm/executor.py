@@ -67,3 +67,10 @@ class Executor:
             return SingleSQL.execute(sql, self.where_expression_values).fetchall()
         else:
             return self.sql.execute(sql, self.where_expression_values).fetchall()
+
+    def select_one(self) -> dict:
+        sql: str = self.schema.select()
+        if not self.expr.dsn:
+            return SingleSQL.execute(sql, self.where_expression_values).fetchone()
+        else:
+            return self.sql.execute(sql, self.where_expression_values).fetchone()

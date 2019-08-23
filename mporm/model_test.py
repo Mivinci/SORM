@@ -2,7 +2,7 @@ import unittest
 
 from mporm.dsn import DSN
 from mporm.orm import ORM
-from mporm.fields import StrField, IntField, BoolField, FloatField
+from mporm.fields import StrField, IntField, BoolField, FloatField, Field
 from mporm.model import Model
 
 
@@ -43,7 +43,8 @@ class MyTestCase(unittest.TestCase):
     def test_model_find(self):
         dsn = DSN(user="root", password="XJJ@none")
         ORM.load(dsn)
-        print(Hero.where(name="Natasha").limit(1).offset(2).filter("name"))
+        # print(Hero.where(name="Natasha").findone())
+        print(Hero.take(2))
         self.assertEqual("" is not None, True)
 
 

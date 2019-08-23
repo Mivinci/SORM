@@ -6,16 +6,16 @@ from mporm.executor import Executor
 
 class Operator:
 
-    limit: int
-    offset: int
+    # limit_value: int
+    # offset_value: int
 
     def __init__(self, expr):
         self.expr = expr
 
         self.order_field = None
         self.order_desc = False
-        self.offset: object
-        self.limit: object
+        self.offset_value = None
+        self.limit_value = None
         self.require_fields = ()
         self.update_values = {}
 
@@ -29,7 +29,7 @@ class Operator:
     def drop(self):
         return self.executor.drop()
 
-    # The 4 Functions below are what we call 'CRUD'
+    # The 4 + 1 Functions below are what we call 'CRUD'
 
     def insert(self):
         return self.executor.insert()
@@ -42,6 +42,9 @@ class Operator:
 
     def find(self) -> list:
         return Executor(self.expr, self).select()
+
+    def findone(self) -> dict:
+        return Executor(self.expr, self).select_one()
 
     # Functions below return `self` since they're used to build chains
 
@@ -76,7 +79,7 @@ class Operator:
         self.find, self.limit.
     """
     def offset(self, offset: int):
-        self.offset = offset
+        self.offset_value = offset
         return self
 
     """
@@ -84,5 +87,5 @@ class Operator:
         self.find, 
     """
     def limit(self, limit: int):
-        self.limit = limit
+        self.limit_value = limit
         return self
