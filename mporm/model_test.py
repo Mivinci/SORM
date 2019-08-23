@@ -43,8 +43,8 @@ class MyTestCase(unittest.TestCase):
     def test_model_find(self):
         dsn = DSN(user="root", password="XJJ@none")
         ORM.load(dsn)
-        # print(Hero.where(name="Natasha").findone())
-        print(Hero.take(2))
+        print(Hero.where(name="Natasha").count())
+        # print(Hero.take(2))
         self.assertEqual("" is not None, True)
 
 

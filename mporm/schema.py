@@ -83,6 +83,12 @@ def row_select(tb_name: str,
            f" {consist_offset_expression(offset)};"
 
 
+def row_count(tb_name: str, where_expression: dict, count_field: str) -> str:
+    return f"select count({count_field}) from {tb_name}" \
+           f" {'' if not where_expression else 'where'}" \
+           f" {' and '.join(spread_where_expression(where_expression))};"
+
+
 class Schema:
     def __init__(self, expr, operator=None):
         self._expr = expr
@@ -110,3 +116,6 @@ class Schema:
                           self._oper.order_field, self._oper.order_desc,
                           self._oper.offset_value,
                           self._oper.limit_value)
+
+    def count(self, field: str) -> str:
+        return row_count(self._expr.tb_name, self._expr.params, field)

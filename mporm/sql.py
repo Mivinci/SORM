@@ -1,4 +1,5 @@
 from pymysql import Connection, connect, cursors, DatabaseError
+from pymysql.cursors import Cursor
 
 from mporm.dsn import DSN
 from mporm.orm import ORM
@@ -18,7 +19,7 @@ class SQL:
                 self.dsn.host, self.dsn.port, self.dsn.database, self.dsn.charset)
         return self.connection
 
-    def execute(self, sql: str, args: tuple = None):
+    def execute(self, sql: str, args: tuple = None) -> Cursor:
         try:
             with self.open().cursor() as cursor:
                 self.affected = cursor.execute(sql, args)
@@ -59,7 +60,7 @@ class SingleSQL:
             print(err)
 
     @classmethod
-    def execute(cls, sql: str, args: tuple = None):
+    def execute(cls, sql: str, args: tuple = None) -> Cursor:
         try:
             with cls.open(ORM.dsn).cursor() as cursor:
                 cls.affected = cursor.execute(sql, args)

@@ -32,21 +32,21 @@ class Model:
         return Expr(cls).operator.create()
 
     @classmethod
-    def first(cls, num: int = 0):
+    def first(cls, num: int = 0) -> dict or list:
         if num == 0:
             return Expr(cls).operator.order(field_name_created_at).findone()
         else:
             return Expr(cls).operator.order(field_name_created_at).limit(num).find()
 
     @classmethod
-    def last(cls, num: int = 0):
+    def last(cls, num: int = 0) -> dict or list:
         if num == 0:
             return Expr(cls).operator.order(field_name_created_at, desc=True).findone()
         else:
             return Expr(cls).operator.order(field_name_created_at, desc=True).limit(num).find()
 
     @classmethod
-    def take(cls, num: int = 0):
+    def take(cls, num: int = 0) -> dict or list:
         if num == 0:
             return Expr(cls).operator.findone()
         else:

@@ -16,61 +16,61 @@ class Executor:
 
     def create(self) -> int:
         sql: str = self.schema.create()
-        if not self.expr.dsn:
-            SingleSQL.execute(sql)
-            return SingleSQL.affected
-        else:
-            self.sql.execute(sql)
-            return self.sql.affected
+        return Affect.execute(sql, self)
 
     def drop(self) -> int:
         sql: str = self.schema.drop()
-        if not self.expr.dsn:
-            SingleSQL.execute(sql)
-            return SingleSQL.affected
-        else:
-            self.sql.execute(sql)
-            return self.sql.affected
+        return Affect.execute(sql, self)
 
     def insert(self) -> int:
         sql:   str = self.schema.insert()
-        if not self.expr.dsn:
-            SingleSQL.execute(sql, self.where_expression_values)
-            return SingleSQL.affected
-        else:
-            self.sql.execute(sql, self.where_expression_values)
-            return self.sql.affected
+        return Affect.execute(sql, self, self.where_expression_values)
 
     def delete(self) -> int:
         sql: str = self.schema.delete()
-        if not self.expr.dsn:
-            print(sql)
-            SingleSQL.execute(sql, self.where_expression_values)
-            return SingleSQL.affected
-        else:
-            self.sql.execute(sql, self.where_expression_values)
-            return self.sql.affected
+        return Affect.execute(sql, self, self.where_expression_values)
 
     def update(self) -> int:
         sql: str = self.schema.update()
-        if not self.expr.dsn:
-            print(sql)
-            SingleSQL.execute(sql, self.update_params_values + self.where_expression_values)
-            return SingleSQL.affected
-        else:
-            self.sql.execute(sql, self.update_params_values + self.where_expression_values)
-            return self.sql.affected
+        return Affect.execute(sql, self, self.update_params_values + self.where_expression_values)
 
     def select(self) -> list:
         sql: str = self.schema.select()
-        if not self.expr.dsn:
-            return SingleSQL.execute(sql, self.where_expression_values).fetchall()
-        else:
-            return self.sql.execute(sql, self.where_expression_values).fetchall()
+        return Query.fetchall(sql, self)
 
     def select_one(self) -> dict:
         sql: str = self.schema.select()
-        if not self.expr.dsn:
-            return SingleSQL.execute(sql, self.where_expression_values).fetchone()
+        return Query.fetchone(sql, self)
+
+    def count(self, field: str) -> int:
+        sql: str = self.schema.count(field)
+        return Query.fetchone(sql, self)[f"count({field})"]
+
+
+class Query:
+
+    @classmethod
+    def fetchall(cls, sql: str, executor: Executor) -> list:
+        if not executor.expr.dsn:
+            return SingleSQL.execute(sql, executor.where_expression_values).fetchall()
         else:
-            return self.sql.execute(sql, self.where_expression_values).fetchone()
+            return executor.sql.execute(sql, executor.where_expression_values).fetchall()
+
+    @classmethod
+    def fetchone(cls, sql: str, executor: Executor) -> dict:
+        if not executor.expr.dsn:
+            return SingleSQL.execute(sql, executor.where_expression_values).fetchone()
+        else:
+            return executor.sql.execute(sql, executor.where_expression_values).fetchone()
+
+
+class Affect:
+
+    @classmethod
+    def execute(cls, sql: str, executor: Executor, args: tuple = None) -> int:
+        if not executor.expr.dsn:
+            SingleSQL.execute(sql, args)
+            return SingleSQL.affected
+        else:
+            executor.sql.execute(sql, args)
+            return executor.sql.affected

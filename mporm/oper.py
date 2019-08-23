@@ -46,6 +46,9 @@ class Operator:
     def findone(self) -> dict:
         return Executor(self.expr, self).select_one()
 
+    def count(self, field: str = "id") -> int:
+        return self.executor.count(field)
+
     # Functions below return `self` since they're used to build chains
 
     def filter(self, *args):
