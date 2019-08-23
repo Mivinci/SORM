@@ -5,7 +5,9 @@
 |_| |_| |_|_|    \___/|_|   |_| |_| |_|
 ```
 
-**mporm** 是一个 Python写的 MySQL 的 ORM 工具, 只含有基本的增删改查 API
+![](https://img.shields.io/badge/Python-3%2B-yellowgreen)![](https://img.shields.io/badge/MySQL-5.5%2B-yellowgreen)![](https://img.shields.io/badge/build-passing-brightgreen)![](https://img.shields.io/badge/license-MIT-blue)
+
+mporm** 是一个 Python写的 MySQL(5.5+) 的 ORM 工具, 只含有基本的增删改查 API
 
 <br/>
 
@@ -15,7 +17,6 @@
 
 - [x] 类似gorm API
 - [x] 自动使用`uuid`作为默认`id`
-- [x] 
 - [x] 自动添加 `created_at` 和 `updated_at` 字段
 
 ### 安装
