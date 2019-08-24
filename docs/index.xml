@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Docs on MPORM</title>
-    <link>http://mivinci.github.io/mporm/</link>
+    <link>https://mivinci.github.io/mporm/</link>
     <description>Recent content in Docs on MPORM</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="http://mivinci.github.io/mporm/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mivinci.github.io/mporm/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Connect to Database</title>
-      <link>http://mivinci.github.io/mporm/docs/overview/connect/</link>
+      <link>https://mivinci.github.io/mporm/docs/overview/connect/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://mivinci.github.io/mporm/docs/overview/connect/</guid>
+      <guid>https://mivinci.github.io/mporm/docs/overview/connect/</guid>
       <description>Connect to Database MPORM can only connect MySQL database, and has two different ways to load configs of database
 Load By DSN The minimum code that loads by dsn is wriiten as
 from mporm import ORM, DSN ORM.load(DSN(user=&amp;#34;xxxx&amp;#34;, password=&amp;#34;xxxx&amp;#34;)) Because mporm will automatically set other configs as host = &amp;ldquo;localhost&amp;rdquo;, port = 3306, database = &amp;ldquo;test&amp;rdquo;, charset = &amp;ldquo;utf8&amp;rdquo;
@@ -24,10 +24,10 @@ Of course you can fill all the configs by yourself</description>
     
     <item>
       <title>Define a Model</title>
-      <link>http://mivinci.github.io/mporm/docs/overview/model/</link>
+      <link>https://mivinci.github.io/mporm/docs/overview/model/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://mivinci.github.io/mporm/docs/overview/model/</guid>
+      <guid>https://mivinci.github.io/mporm/docs/overview/model/</guid>
       <description>Define a Model mporm.Model mporm.Model is a Python class that includes the following fields: id, created_at, updated_at. You need to use it by inheritance.
 So let&amp;rsquo;s define a model named &amp;ldquo;Hero&amp;rdquo;
 from mporm import Model class Hero(Model): ... You should know that MPORM uses uuid for field id and there&amp;rsquo;s no the auto increase thing you can do about it.
@@ -37,19 +37,19 @@ from mporm import Model, StrField, IntField, BoolField class Hero(Model): name =
     
     <item>
       <title>Delete</title>
-      <link>http://mivinci.github.io/mporm/docs/crud/delete/</link>
+      <link>https://mivinci.github.io/mporm/docs/crud/delete/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://mivinci.github.io/mporm/docs/crud/delete/</guid>
+      <guid>https://mivinci.github.io/mporm/docs/crud/delete/</guid>
       <description>Delete Hero.where(name=&amp;#34;Thor&amp;#34;).delete() ## delete from `marvel_hero` where name = &amp;#34;Thor&amp;#34;; Note that the methods insert() update() delete() return the amount of rows that&amp;rsquo;re affected and method find() returns a list-typed query result and not to mention, the method findone() returns a dict-typed query result.</description>
     </item>
     
     <item>
       <title>Insert</title>
-      <link>http://mivinci.github.io/mporm/docs/crud/create/</link>
+      <link>https://mivinci.github.io/mporm/docs/crud/create/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://mivinci.github.io/mporm/docs/crud/create/</guid>
+      <guid>https://mivinci.github.io/mporm/docs/crud/create/</guid>
       <description> Insert There are two methods you can choose from:
 Hero.new(name=&amp;#34;Thor&amp;#34;, age=1000).insert() or simply use
 Hero.add(name=&amp;#34;Thor&amp;#34;, age=1000) The SQL statement that&amp;rsquo;ll be executed is
@@ -58,29 +58,29 @@ insert into `marvel_hero` (name, age) values (&amp;#39;Thor&amp;#39;, 1000);</de
     
     <item>
       <title>Installation</title>
-      <link>http://mivinci.github.io/mporm/docs/overview/installation/</link>
+      <link>https://mivinci.github.io/mporm/docs/overview/installation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://mivinci.github.io/mporm/docs/overview/installation/</guid>
+      <guid>https://mivinci.github.io/mporm/docs/overview/installation/</guid>
       <description> Installation Requirement  Python 3+  Install By PIP pip3 install mporm</description>
     </item>
     
     <item>
       <title>Select</title>
-      <link>http://mivinci.github.io/mporm/docs/crud/query/</link>
+      <link>https://mivinci.github.io/mporm/docs/crud/query/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://mivinci.github.io/mporm/docs/crud/query/</guid>
+      <guid>https://mivinci.github.io/mporm/docs/crud/query/</guid>
       <description>Select Simple Query Hero.first() ## select * from `mar vel_hero` order by created_at limit 1; Hero.last() ## select * from `marvel_hero` order by created_at desc limit 1; Hero.take() ## select * from `marvel_hero` limit 1; Plus they can take an argument
 Hero.first(10) ## select * from `marvel_hero` order by created_at limit 10; Hero.last(10) ## select * from `marvel_hero` order by created_at desc limit 10; Hero.take(10) ## select * from `marvel_hero` limit 10; Where Hero.</description>
     </item>
     
     <item>
       <title>Update</title>
-      <link>http://mivinci.github.io/mporm/docs/crud/update/</link>
+      <link>https://mivinci.github.io/mporm/docs/crud/update/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://mivinci.github.io/mporm/docs/crud/update/</guid>
+      <guid>https://mivinci.github.io/mporm/docs/crud/update/</guid>
       <description> Update Hero.where(name=&amp;#34;Thor&amp;#34;).set(age=1001).update() ## update `marvel_hero` set age=1001 where name = &amp;#39;Thor&amp;#39;;</description>
     </item>
     
