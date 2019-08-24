@@ -5,13 +5,13 @@
 	<meta name="generator" content="Hugo 0.56.0" />
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Overview | MPORM</title>
+<title>Docs | MPORM</title>
 
 
 <link rel="stylesheet" href="/book.min.6c7317d2e8552a0ac3ea8fd4ba500c3dfb1cc9c74e7afd73eee6d729751fad30.css">
 
 
-<script defer src="/search.min.56bd585bda1d3748a64d1903a8b9f87c4893ae17650348664eab9d0b181d58df.js"></script>
+<script defer src="/search.min.06b85572b4a86ffce81d378048d318b8a9551e82f366a483ae10e3ca24bc073f.js"></script>
 
 
 
@@ -115,14 +115,41 @@ https://github.com/alex-shpak/hugo-book
   <label for="menu-control">
     <img src="/svg/menu.svg" alt="Menu" />
   </label>
-  <strong>Overview</strong>
+  <strong>Docs</strong>
 </header>
 
       
 <article class="markdown">
 
 <h1 id="overview">Overview</h1>
-</article>
+
+<h2 id="features">Features</h2>
+
+<ul class="task-list">
+<li><label><input type="checkbox" checked disabled class="task-list-item"> gorm-like API</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Automatically use <code>uuid</code> as field <code>id</code></label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Automatically set <code>created_at</code> and <code>updated_at</code></label></li>
+</ul>
+
+<h2 id="quick-start">Quick Start</h2>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> <span style="color:#111">mporm</span> <span style="color:#f92672">import</span> <span style="color:#111">ORM</span><span style="color:#111">,</span> <span style="color:#111">DSN</span><span style="color:#111">,</span> <span style="color:#111">Model</span><span style="color:#111">,</span> <span style="color:#111">StrField</span><span style="color:#111">,</span> <span style="color:#111">IntField</span>
+
+<span style="color:#111">ORM</span><span style="color:#f92672">.</span><span style="color:#111">load</span><span style="color:#111">(</span><span style="color:#111">DSN</span><span style="color:#111">(</span><span style="color:#111">user</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;xxxx&#34;</span><span style="color:#111">,</span> <span style="color:#111">password</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;xxxx&#34;</span><span style="color:#111">))</span>
+
+
+<span style="color:#00a8c8">class</span> <span style="color:#75af00">Hero</span><span style="color:#111">(</span><span style="color:#111">Model</span><span style="color:#111">):</span>
+    <span style="color:#111">name</span> <span style="color:#f92672">=</span> <span style="color:#111">StrField</span><span style="color:#111">()</span>
+    <span style="color:#111">age</span> <span style="color:#f92672">=</span> <span style="color:#111">IntField</span><span style="color:#111">()</span>
+
+<span style="color:#111">Hero</span><span style="color:#f92672">.</span><span style="color:#111">create</span><span style="color:#111">()</span>
+
+<span style="color:#75715e"># CRUD</span>
+<span style="color:#111">Hero</span><span style="color:#f92672">.</span><span style="color:#111">add</span><span style="color:#111">(</span><span style="color:#111">name</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;Thor&#34;</span><span style="color:#111">,</span> <span style="color:#111">age</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1000</span><span style="color:#111">)</span>
+<span style="color:#111">Hero</span><span style="color:#f92672">.</span><span style="color:#111">where</span><span style="color:#111">(</span><span style="color:#111">name</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;Thor&#34;</span><span style="color:#111">)</span><span style="color:#f92672">.</span><span style="color:#111">set</span><span style="color:#111">(</span><span style="color:#111">age</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1001</span><span style="color:#111">)</span><span style="color:#f92672">.</span><span style="color:#111">update</span><span style="color:#111">()</span>
+<span style="color:#111">Hero</span><span style="color:#f92672">.</span><span style="color:#111">where</span><span style="color:#111">(</span><span style="color:#111">name</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;Thor&#34;</span><span style="color:#111">)</span><span style="color:#f92672">.</span><span style="color:#111">find</span><span style="color:#111">()</span>
+<span style="color:#111">Hero</span><span style="color:#f92672">.</span><span style="color:#111">where</span><span style="color:#111">(</span><span style="color:#111">name</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;Thor&#34;</span><span style="color:#111">)</span><span style="color:#f92672">.</span><span style="color:#111">delete</span><span style="color:#111">()</span>
+
+<span style="color:#111">Hero</span><span style="color:#f92672">.</span><span style="color:#111">drop</span><span style="color:#111">()</span></code></pre></div></article>
 
       
 
@@ -135,7 +162,11 @@ https://github.com/alex-shpak/hugo-book
   <aside class="book-toc level-6 fixed">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#overview">Overview</a></li>
+<li><a href="#overview">Overview</a>
+<ul>
+<li><a href="#features">Features</a></li>
+<li><a href="#quick-start">Quick Start</a></li>
+</ul></li>
 </ul>
 </nav>
   </aside>
