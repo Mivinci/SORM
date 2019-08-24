@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Define a Model | MPORM</title>
+
+
+<link rel="stylesheet" href="/mporm/book.min.6c7317d2e8552a0ac3ea8fd4ba500c3dfb1cc9c74e7afd73eee6d729751fad30.css">
+
+
+<script defer src="/mporm/search.min.ecee40a4fa50b8f3a868027f2f5065d3389b1dceacb15dc5b579c91c844130f1.js"></script>
+
+
+
+<link rel="icon" href="/mporm/favicon.png" type="image/x-icon">
+
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" style="display: none" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="http://mivinci.github.io/mporm">MPORM</a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" readonly />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+  
+  
+  
+
+  <style>
+  nav ul a[href$="\2fmporm\2f docs\2foverview\2fmodel\2f "] {
+      color: #004ed0;
+  }
+  </style>
+
+<ul>
+<li><p><strong>Overview</strong></p>
+
+<ul>
+<li><a href="/docs/overview/installation">Installation</a></li>
+<li><a href="/docs/overview/connect">Connecting to Database</a></li>
+<li><a href="/docs/overview/model">Defining a Model</a></li>
+</ul></li>
+
+<li><p><a href="/docs/crud"><strong>CRUD Interface</strong></a></p>
+
+<ul>
+<li><a href="/docs/crud/create">Insert</a></li>
+<li><a href="/docs/crud/query">Select</a></li>
+<li><a href="/docs/crud/update">Update</a></li>
+<li><a href="/docs/crud/delete">Delete</a></li>
+</ul></li>
+
+<li><p><strong>Examples</strong></p></li>
+
+<li><p><a href="/posts"><strong>Blog</strong></a></p></li>
+
+<li><p><a href="/posts/contribute"><strong>Contribute</strong></a></p></li>
+
+<li><p><a href="https://github.com/mivinci/mporm"><strong>Github</strong> ⚣</a></p></li>
+</ul>
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/mporm/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Define a Model</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="define-a-model">Define a Model</h1>
+
+<h3 id="mporm-model"><strong>mporm.Model</strong></h3>
+
+<p><code>mporm.Model</code> is a Python class that includes the following fields: <code>id</code>, <code>created_at</code>, <code>updated_at</code>. You need to use it by inheritance.</p>
+
+<p>So let&rsquo;s define a model named &ldquo;Hero&rdquo;</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> <span style="color:#111">mporm</span> <span style="color:#f92672">import</span> <span style="color:#111">Model</span>
+
+<span style="color:#00a8c8">class</span> <span style="color:#75af00">Hero</span><span style="color:#111">(</span><span style="color:#111">Model</span><span style="color:#111">):</span>
+    <span style="color:#f92672">...</span></code></pre></div>
+<p>You should know that MPORM uses <code>uuid</code> for field <code>id</code> and there&rsquo;s no the <code>auto increase</code> thing you can do about it.</p>
+
+<p>Now we&rsquo;d like to have our customized fields</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> <span style="color:#111">mporm</span> <span style="color:#f92672">import</span> <span style="color:#111">Model</span><span style="color:#111">,</span> <span style="color:#111">StrField</span><span style="color:#111">,</span> <span style="color:#111">IntField</span><span style="color:#111">,</span> <span style="color:#111">BoolField</span>
+
+<span style="color:#00a8c8">class</span> <span style="color:#75af00">Hero</span><span style="color:#111">(</span><span style="color:#111">Model</span><span style="color:#111">):</span>
+    <span style="color:#111">name</span> <span style="color:#f92672">=</span> <span style="color:#111">StrField</span><span style="color:#111">(</span><span style="color:#111">capacity</span><span style="color:#f92672">=</span><span style="color:#ae81ff">32</span><span style="color:#111">)</span>
+    <span style="color:#111">age</span> <span style="color:#f92672">=</span> <span style="color:#111">IntField</span><span style="color:#111">(</span><span style="color:#111">size</span><span style="color:#f92672">=</span><span style="color:#ae81ff">32</span><span style="color:#111">)</span>
+    <span style="color:#111">alive</span> <span style="color:#f92672">=</span> <span style="color:#111">BoolField</span><span style="color:#111">(</span><span style="color:#111">default</span><span style="color:#f92672">=</span><span style="color:#111">True</span><span style="color:#111">)</span></code></pre></div>
+<p>You can see fields are defined by other classes from MPORM and each can take arguments</p>
+
+<p>Here&rsquo;s all the fields and arguments that&rsquo;re available in MPORM:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"><strong>capacity</strong></th>
+<th align="center"><strong>size</strong></th>
+<th align="center">default</th>
+<th align="center">not_null</th>
+<th align="center">auto_update</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><strong>StrField</strong></td>
+<td align="center">255</td>
+<td align="center"></td>
+<td align="center">null</td>
+<td align="center">False</td>
+<td align="center"></td>
+</tr>
+
+<tr>
+<td align="center"><strong>IntField</strong></td>
+<td align="center"></td>
+<td align="center">64</td>
+<td align="center">null</td>
+<td align="center">False</td>
+<td align="center"></td>
+</tr>
+
+<tr>
+<td align="center"><strong>BoolField</strong></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center">False</td>
+<td align="center">True</td>
+<td align="center"></td>
+</tr>
+
+<tr>
+<td align="center"><strong>FloatField</strong></td>
+<td align="center"></td>
+<td align="center">32(64)</td>
+<td align="center">null</td>
+<td align="center">False</td>
+<td align="center"></td>
+</tr>
+
+<tr>
+<td align="center"><strong>TimeField</strong></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">NOW()</td>
+<td align="center">False</td>
+<td align="center">False</td>
+</tr>
+</tbody>
+</table>
+
+<p>The values in the chart&rsquo;s body are the default value for each argument of each field.</p>
+
+<p>Don&rsquo;t you ever think about other advanced association fields!</p>
+
+<p>Therefore you can actually define your model with minimum codes like</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> <span style="color:#111">mporm</span> <span style="color:#f92672">import</span> <span style="color:#111">Model</span><span style="color:#111">,</span> <span style="color:#111">StrField</span><span style="color:#111">,</span> <span style="color:#111">IntField</span><span style="color:#111">,</span> <span style="color:#111">BoolField</span>
+
+<span style="color:#00a8c8">class</span> <span style="color:#75af00">Hero</span><span style="color:#111">(</span><span style="color:#111">Model</span><span style="color:#111">):</span>
+    <span style="color:#111">name</span> <span style="color:#f92672">=</span> <span style="color:#111">StrField</span><span style="color:#111">()</span>
+    <span style="color:#111">age</span> <span style="color:#f92672">=</span> <span style="color:#111">IntField</span><span style="color:#111">()</span></code></pre></div>
+<p>which&rsquo;s not recommended.</p>
+
+<p>Anyways, you just define whatever that&rsquo;s needed for your project.</p>
+
+<h4 id="create-table"><strong>Create Table</strong></h4>
+
+<p>When the model is correctly defined</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">Hero</span><span style="color:#f92672">.</span><span style="color:#111">create</span><span style="color:#111">()</span></code></pre></div>
+<p>will create a table named &ldquo;hero&rdquo; in the specified database.</p>
+
+<h4 id="drop-table"><strong>Drop Table</strong></h4>
+
+<p>To drop the table</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">Hero</span><span style="color:#f92672">.</span><span style="color:#111">drop</span><span style="color:#111">()</span></code></pre></div>
+<p>is all you need to write.</p>
+
+<h3 id="table-name-prefix"><strong>Table Name Prefix</strong></h3>
+
+<p>A <code>__prefix__</code> attribute can be embed into the model to tell MPORM that you want a prefix for the table name in the database.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> <span style="color:#111">mporm</span> <span style="color:#f92672">import</span> <span style="color:#111">Model</span><span style="color:#111">,</span> <span style="color:#111">StrField</span><span style="color:#111">,</span> <span style="color:#111">IntField</span><span style="color:#111">,</span> <span style="color:#111">BoolField</span>
+
+<span style="color:#00a8c8">class</span> <span style="color:#75af00">Hero</span><span style="color:#111">(</span><span style="color:#111">Model</span><span style="color:#111">):</span>
+    <span style="color:#111">__prefix__</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;Marvel&#34;</span>
+    <span style="color:#111">name</span> <span style="color:#f92672">=</span> <span style="color:#111">StrField</span><span style="color:#111">()</span>
+    <span style="color:#111">age</span> <span style="color:#f92672">=</span> <span style="color:#111">IntField</span><span style="color:#111">()</span></code></pre></div>
+<p>Now,</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">Hero</span><span style="color:#f92672">.</span><span style="color:#111">create</span><span style="color:#111">()</span></code></pre></div>
+<p>will create a table named &ldquo;marvel_hero&rdquo; with all converted into lowercases instead of just &ldquo;hero&rdquo;.</p>
+</article>
+
+      
+<div class="book-footer justify-end">
+  
+  
+  <div>
+    <a href="https://github.com/mivinci/mporm/edit/master/docs/content/docs/overview/model.md" target="_blank" rel="noopener">
+      <img src="/mporm/svg/edit.svg" alt="Edit" /> Edit this page
+    </a>
+  </div>
+  
+</div>
+
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc level-6 fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#define-a-model">Define a Model</a>
+<ul>
+<li>
+<ul>
+<li><a href="#mporm-model"><strong>mporm.Model</strong></a>
+<ul>
+<li><a href="#create-table"><strong>Create Table</strong></a></li>
+<li><a href="#drop-table"><strong>Drop Table</strong></a></li>
+</ul></li>
+<li><a href="#table-name-prefix"><strong>Table Name Prefix</strong></a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+  
+  
+  
+</body>
+
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connect to Database | MPORM</title>
+
+
+<link rel="stylesheet" href="/mporm/book.min.6c7317d2e8552a0ac3ea8fd4ba500c3dfb1cc9c74e7afd73eee6d729751fad30.css">
+
+
+<script defer src="/mporm/search.min.ecee40a4fa50b8f3a868027f2f5065d3389b1dceacb15dc5b579c91c844130f1.js"></script>
+
+
+
+<link rel="icon" href="/mporm/favicon.png" type="image/x-icon">
+
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" style="display: none" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="http://mivinci.github.io/mporm">MPORM</a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" readonly />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+  
+  
+  
+
+  <style>
+  nav ul a[href$="\2fmporm\2f docs\2foverview\2f connect\2f "] {
+      color: #004ed0;
+  }
+  </style>
+
+<ul>
+<li><p><strong>Overview</strong></p>
+
+<ul>
+<li><a href="/docs/overview/installation">Installation</a></li>
+<li><a href="/docs/overview/connect">Connecting to Database</a></li>
+<li><a href="/docs/overview/model">Defining a Model</a></li>
+</ul></li>
+
+<li><p><a href="/docs/crud"><strong>CRUD Interface</strong></a></p>
+
+<ul>
+<li><a href="/docs/crud/create">Insert</a></li>
+<li><a href="/docs/crud/query">Select</a></li>
+<li><a href="/docs/crud/update">Update</a></li>
+<li><a href="/docs/crud/delete">Delete</a></li>
+</ul></li>
+
+<li><p><strong>Examples</strong></p></li>
+
+<li><p><a href="/posts"><strong>Blog</strong></a></p></li>
+
+<li><p><a href="/posts/contribute"><strong>Contribute</strong></a></p></li>
+
+<li><p><a href="https://github.com/mivinci/mporm"><strong>Github</strong> ⚣</a></p></li>
+</ul>
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/mporm/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Connect to Database</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="connect-to-database">Connect to Database</h1>
+
+<p>MPORM can only  connect MySQL database, and has two different ways to load configs of database</p>
+
+<h3 id="load-by-dsn"><strong>Load By DSN</strong></h3>
+
+<p>The minimum code that loads by dsn is wriiten as</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> <span style="color:#111">mporm</span> <span style="color:#f92672">import</span> <span style="color:#111">ORM</span><span style="color:#111">,</span> <span style="color:#111">DSN</span>
+
+<span style="color:#111">ORM</span><span style="color:#f92672">.</span><span style="color:#111">load</span><span style="color:#111">(</span><span style="color:#111">DSN</span><span style="color:#111">(</span><span style="color:#111">user</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;xxxx&#34;</span><span style="color:#111">,</span> <span style="color:#111">password</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;xxxx&#34;</span><span style="color:#111">))</span></code></pre></div>
+<p>Because mporm will automatically set other configs as <code>host</code> = &ldquo;localhost&rdquo;, <code>port</code> = 3306, <code>database</code> = &ldquo;test&rdquo;, <code>charset</code> = &ldquo;utf8&rdquo;</p>
+
+<p>Of course you can fill all the configs by yourself</p>
+
+<h3 id="load-from-toml-file"><strong>Load From Toml File</strong></h3>
+
+<p>You can write all the configs in a toml file like</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#111">[</span><span style="color:#75af00">database</span><span style="color:#111">]</span>
+<span style="color:#75af00">user</span> <span style="color:#111">=</span> <span style="color:#d88200">&#34;xxxx&#34;</span>
+<span style="color:#75af00">password</span> <span style="color:#111">=</span> <span style="color:#d88200">&#34;xxxx&#34;</span>
+<span style="color:#75af00">host</span> <span style="color:#111">=</span> <span style="color:#d88200">&#34;xxxx&#34;</span>
+<span style="color:#75af00">port</span> <span style="color:#111">=</span> <span style="color:#ae81ff">3306</span>
+<span style="color:#75af00">database</span> <span style="color:#111">=</span> <span style="color:#d88200">&#34;xxxx&#34;</span>
+<span style="color:#75af00">charset</span> <span style="color:#111">=</span> <span style="color:#d88200">&#34;xxxx&#34;</span></code></pre></div>
+<p>Then use <code>load_file</code> method</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> <span style="color:#111">mporm</span> <span style="color:#f92672">import</span> <span style="color:#111">ORM</span>
+
+<span style="color:#111">ORM</span><span style="color:#f92672">.</span><span style="color:#111">load_file</span><span style="color:#111">(</span><span style="color:#d88200">&#34;path/to/toml&#34;</span><span style="color:#111">)</span></code></pre></div>
+<p><strong>Note</strong> that if you use the second way, remember <strong>all the 6</strong> configs needs to be written in the toml file.</p>
+</article>
+
+      
+<div class="book-footer justify-end">
+  
+  
+  <div>
+    <a href="https://github.com/mivinci/mporm/edit/master/docs/content/docs/overview/connect.md" target="_blank" rel="noopener">
+      <img src="/mporm/svg/edit.svg" alt="Edit" /> Edit this page
+    </a>
+  </div>
+  
+</div>
+
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc level-6 fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#connect-to-database">Connect to Database</a>
+<ul>
+<li>
+<ul>
+<li><a href="#load-by-dsn"><strong>Load By DSN</strong></a></li>
+<li><a href="#load-from-toml-file"><strong>Load From Toml File</strong></a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+  
+  
+  
+</body>
+
+</html>
