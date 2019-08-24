@@ -5,13 +5,13 @@
 	<meta name="generator" content="Hugo 0.56.0" />
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> | MPORM</title>
+<title>Overview | MPORM</title>
 
 
 <link rel="stylesheet" href="/book.min.6c7317d2e8552a0ac3ea8fd4ba500c3dfb1cc9c74e7afd73eee6d729751fad30.css">
 
 
-<script defer src="/search.min.d664c13aeedc6b7872156db8a90a66f280aa6f3aa8d986b58d0e983210124465.js"></script>
+<script defer src="/search.min.56bd585bda1d3748a64d1903a8b9f87c4893ae17650348664eab9d0b181d58df.js"></script>
 
 
 
@@ -28,20 +28,122 @@ https://github.com/alex-shpak/hugo-book
 </head>
 
 <body>
-  <main class="flex justify-center">
-    <div class="book-home markdown">
-      <h1 id="hugo-book-theme">Hugo Book Theme</h1>
+  <input type="checkbox" style="display: none" id="menu-control" />
+  <main class="flex container">
 
-<p>This is a placeholder for home page.<br />
-You can override this page in:</p>
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://mporm.xjj.pub">MPORM</a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" readonly />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+  
+  
+  
+    
+    
+  
+
+  <style>
+  nav ul a[href="https\3a\2f\2fmporm.xjj.pub\2f "] {
+      color: #004ed0;
+  }
+  </style>
 
 <ul>
-<li><code>/content/_index.md</code></li>
-<li><code>/layouts/home.html</code></li>
-</ul>
-    </div>
-  </main>
+<li><p><strong>Overview</strong></p>
 
+<ul>
+<li><a href="/docs/overview/installation">Installation</a></li>
+<li><a href="/docs/overview/connect">Connecting to Database</a></li>
+<li><a href="/docs/overview/model">Defining a Model</a></li>
+</ul></li>
+
+<li><p><a href="/docs/crud"><strong>CRUD Interface</strong></a></p>
+
+<ul>
+<li><a href="/docs/crud/create">Insert</a></li>
+<li><a href="/docs/crud/query">Select</a></li>
+<li><a href="/docs/crud/update">Update</a></li>
+<li><a href="/docs/crud/delete">Delete</a></li>
+</ul></li>
+
+<li><p><strong>Examples</strong></p></li>
+
+<li><p><a href="/posts"><strong>Blog</strong></a></p></li>
+
+<li><p><a href="/posts/contribute"><strong>Contribute</strong></a></p></li>
+
+<li><p><a href="https://github.com/mivinci/mporm"><strong>Github</strong> ⚣</a></p></li>
+</ul>
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Overview</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="overview">Overview</h1>
+</article>
+
+      
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc level-6 fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#overview">Overview</a></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+  
   
   
 </body>
