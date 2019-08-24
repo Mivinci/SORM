@@ -7,10 +7,6 @@
   </url>
   
   <url>
-    <loc>https://mporm.xjj.pub/docs/crud/</loc>
-  </url>
-  
-  <url>
     <loc>https://mporm.xjj.pub/docs/overview/model/</loc>
   </url>
   
@@ -19,15 +15,15 @@
   </url>
   
   <url>
+    <loc>https://mporm.xjj.pub/docs/</loc>
+  </url>
+  
+  <url>
     <loc>https://mporm.xjj.pub/docs/crud/create/</loc>
   </url>
   
   <url>
     <loc>https://mporm.xjj.pub/docs/overview/installation/</loc>
-  </url>
-  
-  <url>
-    <loc>https://mporm.xjj.pub/docs/</loc>
   </url>
   
   <url>

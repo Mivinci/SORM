@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="/book.min.6c7317d2e8552a0ac3ea8fd4ba500c3dfb1cc9c74e7afd73eee6d729751fad30.css">
 
 
-<script defer src="/search.min.06b85572b4a86ffce81d378048d318b8a9551e82f366a483ae10e3ca24bc073f.js"></script>
+<script defer src="/search.min.be6c4346141db863184e0b9c09bc45cc05dff08ef18e632a4dd0ef3ffb4e562c.js"></script>
 
 
 
@@ -66,7 +66,7 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/overview/model">Defining a Model</a></li>
 </ul></li>
 
-<li><p><a href="/docs/crud"><strong>CRUD Interface</strong></a></p>
+<li><p><strong>CRUD Interface</strong></p>
 
 <ul>
 <li><a href="/docs/crud/create">Insert</a></li>
@@ -77,9 +77,9 @@ https://github.com/alex-shpak/hugo-book
 
 <li><p><strong>Examples</strong></p></li>
 
-<li><p><a href="/posts"><strong>Blog</strong></a></p></li>
-
 <li><p><a href="/posts/contribute"><strong>Contribute</strong></a></p></li>
+
+<li><p><a href="/posts"><strong>Blog</strong></a></p></li>
 
 <li><p><a href="https://github.com/mivinci/mporm"><strong>Github</strong> ⚣</a></p></li>
 </ul>
@@ -116,6 +116,16 @@ https://github.com/alex-shpak/hugo-book
       
 <article class="markdown">
 
+<h1 id="model">Model</h1>
+
+<p>We have defined a model &ldquo;Hero&rdquo; previously</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> <span style="color:#111">mporm</span> <span style="color:#f92672">import</span> <span style="color:#111">Model</span><span style="color:#111">,</span> <span style="color:#111">StrField</span><span style="color:#111">,</span> <span style="color:#111">IntField</span><span style="color:#111">,</span> <span style="color:#111">BoolField</span>
+
+<span style="color:#00a8c8">class</span> <span style="color:#75af00">Hero</span><span style="color:#111">(</span><span style="color:#111">Model</span><span style="color:#111">):</span>
+    <span style="color:#111">__prefix__</span> <span style="color:#d88200">&#34;Marvel&#34;</span>
+    <span style="color:#111">name</span> <span style="color:#f92672">=</span> <span style="color:#111">StrField</span><span style="color:#111">(</span><span style="color:#111">capacity</span><span style="color:#f92672">=</span><span style="color:#ae81ff">32</span><span style="color:#111">)</span>
+    <span style="color:#111">age</span> <span style="color:#f92672">=</span> <span style="color:#111">IntField</span><span style="color:#111">(</span><span style="color:#111">size</span><span style="color:#f92672">=</span><span style="color:#ae81ff">32</span><span style="color:#111">)</span>
+    <span style="color:#111">alive</span> <span style="color:#f92672">=</span> <span style="color:#111">BoolField</span><span style="color:#111">(</span><span style="color:#111">default</span><span style="color:#f92672">=</span><span style="color:#111">True</span><span style="color:#111">)</span></code></pre></div>
 <h1 id="insert">Insert</h1>
 
 <p>There are two methods you can choose from:</p>
@@ -136,6 +146,7 @@ https://github.com/alex-shpak/hugo-book
   <aside class="book-toc level-6 fixed">
     <nav id="TableOfContents">
 <ul>
+<li><a href="#model">Model</a></li>
 <li><a href="#insert">Insert</a></li>
 </ul>
 </nav>
