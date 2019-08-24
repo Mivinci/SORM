@@ -5,13 +5,13 @@
 	<meta name="generator" content="Hugo 0.56.0" />
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Docs | MPORM</title>
+<title> | MPORM</title>
 
 
 <link rel="stylesheet" href="/book.min.6c7317d2e8552a0ac3ea8fd4ba500c3dfb1cc9c74e7afd73eee6d729751fad30.css">
 
 
-<script defer src="/search.min.c961ae22d7a1192430e078a75bc4697c450176ed9bb800f26986d78f7c889567.js"></script>
+<script defer src="/search.min.d664c13aeedc6b7872156db8a90a66f280aa6f3aa8d986b58d0e983210124465.js"></script>
 
 
 
@@ -28,159 +28,20 @@ https://github.com/alex-shpak/hugo-book
 </head>
 
 <body>
-  <input type="checkbox" style="display: none" id="menu-control" />
-  <main class="flex container">
+  <main class="flex justify-center">
+    <div class="book-home markdown">
+      <h1 id="hugo-book-theme">Hugo Book Theme</h1>
 
-    <aside class="book-menu fixed">
-      <nav>
-<h2 class="book-brand">
-  <a href="https://mporm.xjj.pub">MPORM</a>
-</h2>
-
-
-<div class="book-search">
-  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" readonly />
-  <div class="book-search-spinner spinner hidden"></div>
-  <ul id="book-search-results"></ul>
-</div>
-
-
-
-
-
-    
-  
-  
-  
-    
-    
-  
-
-  <style>
-  nav ul a[href="https\3a\2f\2fmporm.xjj.pub\2f "] {
-      color: #004ed0;
-  }
-  </style>
+<p>This is a placeholder for home page.<br />
+You can override this page in:</p>
 
 <ul>
-<li><p><strong>Overview</strong></p>
-
-<ul>
-<li><a href="/docs/overview/installation">Installation</a></li>
-<li><a href="/docs/overview/connect">Connecting to Database</a></li>
-<li><a href="/docs/overview/model">Defining a Model</a></li>
-</ul></li>
-
-<li><p><a href="/docs/crud"><strong>CRUD Interface</strong></a></p>
-
-<ul>
-<li><a href="/docs/crud/create">Insert</a></li>
-<li><a href="/docs/crud/query">Select</a></li>
-<li><a href="/docs/crud/update">Update</a></li>
-<li><a href="/docs/crud/delete">Delete</a></li>
-</ul></li>
-
-<li><p><strong>Examples</strong></p></li>
-
-<li><p><a href="/posts"><strong>Blog</strong></a></p></li>
-
-<li><p><a href="/posts/contribute"><strong>Contribute</strong></a></p></li>
-
-<li><p><a href="https://github.com/mivinci/mporm"><strong>Github</strong> ⚣</a></p></li>
+<li><code>/content/_index.md</code></li>
+<li><code>/layouts/home.html</code></li>
 </ul>
-
-
-
-
-
-
-
-</nav>
-
-
-<script>
-(function() {
-  var menu = document.querySelector("aside.book-menu nav");
-  addEventListener("beforeunload", function(event) {
-    localStorage.setItem("menu.scrollTop", menu.scrollTop);
-  });
-  menu.scrollTop = localStorage.getItem("menu.scrollTop");
-})();
-</script>
-
-    </aside>
-
-    <div class="book-page">
-      <header class="flex align-center justify-between book-header">
-  <label for="menu-control">
-    <img src="/svg/menu.svg" alt="Menu" />
-  </label>
-  <strong>Docs</strong>
-</header>
-
-      
-<article class="markdown">
-
-<pre><code> _ __ ___  _____  ___  _ __  _ __ ___
-| '_ ` _ \|  __ \/ _ \| `__/| '_ ` _ \
-| | | | | | |___| |_| | |   | | | | | |
-|_| |_| |_|_|    \___/|_|   |_| |_| |_|
-</code></pre>
-
-<h1 id="overview">Overview</h1>
-
-<h2 id="features">Features</h2>
-
-<ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> gorm-like API</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Automatically use <code>uuid</code> as field <code>id</code></label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Automatically set <code>created_at</code> and <code>updated_at</code></label></li>
-</ul>
-
-<h2 id="quick-start">Quick Start</h2>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> <span style="color:#111">mporm</span> <span style="color:#f92672">import</span> <span style="color:#111">ORM</span><span style="color:#111">,</span> <span style="color:#111">DSN</span><span style="color:#111">,</span> <span style="color:#111">Model</span><span style="color:#111">,</span> <span style="color:#111">StrField</span><span style="color:#111">,</span> <span style="color:#111">IntField</span>
-
-<span style="color:#111">ORM</span><span style="color:#f92672">.</span><span style="color:#111">load</span><span style="color:#111">(</span><span style="color:#111">DSN</span><span style="color:#111">(</span><span style="color:#111">user</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;xxxx&#34;</span><span style="color:#111">,</span> <span style="color:#111">password</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;xxxx&#34;</span><span style="color:#111">))</span>
-
-
-<span style="color:#00a8c8">class</span> <span style="color:#75af00">Hero</span><span style="color:#111">(</span><span style="color:#111">Model</span><span style="color:#111">):</span>
-    <span style="color:#111">name</span> <span style="color:#f92672">=</span> <span style="color:#111">StrField</span><span style="color:#111">()</span>
-    <span style="color:#111">age</span> <span style="color:#f92672">=</span> <span style="color:#111">IntField</span><span style="color:#111">()</span>
-
-<span style="color:#111">Hero</span><span style="color:#f92672">.</span><span style="color:#111">create</span><span style="color:#111">()</span>
-
-<span style="color:#75715e"># CRUD</span>
-<span style="color:#111">Hero</span><span style="color:#f92672">.</span><span style="color:#111">add</span><span style="color:#111">(</span><span style="color:#111">name</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;Thor&#34;</span><span style="color:#111">,</span> <span style="color:#111">age</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1000</span><span style="color:#111">)</span>
-<span style="color:#111">Hero</span><span style="color:#f92672">.</span><span style="color:#111">where</span><span style="color:#111">(</span><span style="color:#111">name</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;Thor&#34;</span><span style="color:#111">)</span><span style="color:#f92672">.</span><span style="color:#111">set</span><span style="color:#111">(</span><span style="color:#111">age</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1001</span><span style="color:#111">)</span><span style="color:#f92672">.</span><span style="color:#111">update</span><span style="color:#111">()</span>
-<span style="color:#111">Hero</span><span style="color:#f92672">.</span><span style="color:#111">where</span><span style="color:#111">(</span><span style="color:#111">name</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;Thor&#34;</span><span style="color:#111">)</span><span style="color:#f92672">.</span><span style="color:#111">find</span><span style="color:#111">()</span>
-<span style="color:#111">Hero</span><span style="color:#f92672">.</span><span style="color:#111">where</span><span style="color:#111">(</span><span style="color:#111">name</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;Thor&#34;</span><span style="color:#111">)</span><span style="color:#f92672">.</span><span style="color:#111">delete</span><span style="color:#111">()</span>
-
-<span style="color:#111">Hero</span><span style="color:#f92672">.</span><span style="color:#111">drop</span><span style="color:#111">()</span></code></pre></div></article>
-
-      
-
-      
     </div>
-
-    
-  
-
-  <aside class="book-toc level-6 fixed">
-    <nav id="TableOfContents">
-<ul>
-<li><a href="#overview">Overview</a>
-<ul>
-<li><a href="#features">Features</a></li>
-<li><a href="#quick-start">Quick Start</a></li>
-</ul></li>
-</ul>
-</nav>
-  </aside>
-
-
-
   </main>
-  
+
   
   
 </body>
