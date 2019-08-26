@@ -19,15 +19,15 @@ class SQL:
                 self.dsn.host, self.dsn.port, self.dsn.database, self.dsn.charset)
         return self.connection
 
-    def execute(self, sql: str, args: tuple = None) -> Cursor or None:
+    def execute(self, sql: str, args: tuple = None) -> Cursor:
         try:
             with self.open().cursor() as cursor:
                 self.affected = cursor.execute(sql, args)
             self.connection.commit()
             return cursor
         except Exception as err:
-            print(err)
-            return None
+            self.close()
+            raise err
         finally:
             pass
 
@@ -60,15 +60,15 @@ class SingleSQL:
             print(err)
 
     @classmethod
-    def execute(cls, sql: str, args: tuple = None) -> Cursor or None:
+    def execute(cls, sql: str, args: tuple = None) -> Cursor:
         try:
             with cls.open(ORM.dsn).cursor() as cursor:
                 cls.affected = cursor.execute(sql, args)
             cls.connection.commit()
             return cursor
         except Exception as err:
-            print(err)
-            return None
+            cls.close()
+            raise err
         finally:
             pass
 
