@@ -7,4 +7,3 @@ from mporm.sql import ORM
 from mporm.fields import *
 
 __version__ = "0.0.2"
-

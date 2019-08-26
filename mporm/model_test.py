@@ -1,6 +1,5 @@
 import unittest
 
-from mporm.dsn import DSN
 from mporm.sql import ORM
 from mporm.fields import StrField, IntField, BoolField, FloatField, Field
 from mporm.model import Model

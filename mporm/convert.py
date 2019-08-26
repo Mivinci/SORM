@@ -1,5 +1,5 @@
-iNAME = 0
-iDESC = 1
+iNAME: int = 0
+iDESC: int = 1
 
 TYPE_STR:   str = "VARCHAR"
 TYPE_INT:   str = "INT"

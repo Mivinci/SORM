@@ -1,5 +1,4 @@
-from mporm.convert import TYPE_STR, TYPE_INT, TYPE_BOOL, TYPE_FLOAT32, TYPE_FLOAT64, TYPE_TIME
-from mporm.convert import Convert, iDESC, iNAME
+from mporm.convert import TYPE_STR, TYPE_INT, TYPE_BOOL, TYPE_FLOAT32, TYPE_FLOAT64, TYPE_TIME, Convert, iDESC, iNAME
 
 from typing import Callable
 
